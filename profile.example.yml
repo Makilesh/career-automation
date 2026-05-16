@@ -1,0 +1,76 @@
+# Career-Ops Profile Configuration
+# Copy this file to config/profile.yml and fill in your details.
+# This is the single source of truth for your personal data across all modes.
+
+candidate:
+  full_name: "Pranav Ram D S"
+  email: "pranavram106@example.com"
+  phone: "7867997369"
+  location: "Coimbatore, india"
+  linkedin: "https://www.linkedin.com/in/pranav-ram344/"
+  github: "https://github.com/Pranav1066"
+  # (Optional) Canva resume design ID for visual CV generation via /career-ops pdf.
+  # Find it in your Canva design URL: https://www.canva.com/design/DAxxxxxxx/...
+  # The ID starts with "D" and is 11 characters long.
+  # canva_resume_design_id: "DAxxxxxxxxx"
+
+target_roles:
+  # Your North Star roles — what you're optimizing for
+  primary:
+    - "Junior AI Engineer"
+    - "Junior ML Engineer"
+    - "Data Scientist"
+    - "Gen AI Developer"
+  # Archetypes help the evaluation system score fit
+  archetypes:
+    - name: "AI/ML Engineer"
+      level: "Junior"
+      fit: "primary"        # primary = dream role, secondary = good fit, adjacent = stretch
+    - name: "Gen AI Developer"
+      level: "Junior"
+      fit: "secondary"
+    - name: "Data Scientist"
+      level: "Junior"
+      fit: "adjacent"
+
+narrative:
+  # Your professional headline (1 line)
+  headline: "Junior AI Engineer focused on building practical ML and GenAI applications"
+
+  # Your exit story — what makes you unique
+  exit_story: "Built hands-on AI and ML projects across LLMs, RAG, and applied machine learning with a strong focus on solving real-world problems and shipping usable products."
+
+  # Your top 3-5 superpowers
+  superpowers:
+    - "End-to-end ML project development"
+    - "LLM and RAG application building"
+    - "Fast prototyping and experimentation"
+    - "Strong debugging and problem-solving"
+    - "Turning ideas into deployable AI products"
+
+  # Proof points — projects, articles, case studies with measurable impact
+  proof_points:
+    - name: "RAG-based PDF Question Answering System"
+      url: "https://github.com/Pranav1066"
+      hero_metric: "Built an end-to-end RAG pipeline for document querying with semantic retrieval"
+
+    - name: "Fine-Tuned LLM for Domain-specific Q&A"
+      url: "https://github.com/Pranav1066"
+      hero_metric: "Fine-tuned open-source LLMs using LoRA/QLoRA for efficient domain adaptation"
+
+    - name: "AI Job Automation & Career Ops Workflows"
+      url: "https://github.com/Pranav1066"
+      hero_metric: "Built automation workflows for job search, application tracking, and profile optimization"
+
+compensation:
+  target_range: "₹8-18 LPA"     # Your target total comp
+  currency: "INR"
+  minimum: "₹8 LPA"             # Walk-away number
+  location_flexibility: "Remote preferred, open to hybrid or on-site roles across India"
+
+location:
+  country: "India"
+  city: "Coimbatore,Bangalore"
+  timezone: "IST"
+  visa_status: "No sponsorship needed"
+  onsite_availability: "Open to relocation and on-site opportunities across India"
