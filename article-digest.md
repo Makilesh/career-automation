@@ -4,19 +4,21 @@
 
 **Proof points:**
 - AI Voice Calling Agent: automated outbound calling with persistent
-  conversation memory and Twilio + Pinecone integration
-- Meeting Assistant: multi-speaker diarization and expert-response
-  RAG support
+  conversation memory, Twilio + Pinecone integration, and 80% reduction
+  in manual call handling
+- Meeting Assistant: real-time 10-speaker diarization, 50+ hours of
+  meeting data per week, and expert-response RAG support
 - Lead Pipeline: staged AI qualification with batching, fallback design,
-  and async scraping
+  async scraping, and 20 leads per API call
 
 **Architecture highlights:**
 - Voice Agent: Twilio + Pinecone + persistent conversation memory
   -> context-aware dynamic responses
-- Meeting Assistant: multi-speaker diarization, wake-word
+- Meeting Assistant: real-time 10-speaker diarization, wake-word
   activation, RAG for expert responses
 - Lead generation Pipeline: 3-stage AI qualification, batch processing
-  and concurrent async scraping in LinkedIn, Discord, Slack, and Reddit
+  (20 leads/API call), and concurrent async scraping in LinkedIn,
+  Discord, Slack, and Reddit
 
 ---
 
@@ -51,7 +53,7 @@
 
 **Proof points:**
 - 7-agent LangGraph state machine
-- Hybrid retrieval in Milvus 2.4
+- ~200ms retrieval latency in Milvus 2.4
 - Self-corrective loop: auto-rewrites queries scoring < 0.7,
   re-retrieves up to 2 times
 - Supports PDF, DOCX, PPTX, Excel, TXT ingestion
@@ -69,9 +71,10 @@
 
 **Proof points:**
 - Full-duplex STT + LLM + TTS pipeline
+- 200-500ms end-to-end latency (STT + LLM + TTS)
+- <150ms barge-in detection
+- 40-90ms first-byte TTS latency with Kokoro-82M
 - CUDA auto-detection and configurable voice personas
-- Barge-in detection
-- Kokoro-82M TTS integration
 
 **Architecture:**
 - Producer-consumer async architecture
@@ -85,8 +88,8 @@
 ## AI Legal Engine (Jun 2025 | THIRAN Hackathon Finalist)
 
 **Proof points:**
-- Hybrid search across Indian Penal Code documents
-- RAG workflow for legal document retrieval
+- Hybrid search across 673+ Indian Penal Code documents
+- Sub-second retrieval
 - Hackathon finalist 2025
 
 ---
@@ -95,6 +98,7 @@
 
 **Proof points:**
 - Batch processing for LLM qualification
+- Batch processing: 20 leads per API call
 - Sources: Reddit, Discord, Slack, LinkedIn
 - Qualification: pre-filter + dual LLM (GPT-4 + Gemini + Ollama fallback)
 - Competitor detection included

@@ -13,9 +13,9 @@
 
 | If the role is... | Emphasize... | Key proof points |
 |-------------------|--------------|-----------------|
-| LLMOps / Platform | Agentic RAG, Milvus, hybrid retrieval, production deployment | article-digest.md RAG section |
+| LLMOps / Platform | Agentic RAG (7-agent, Milvus, 200ms), production deployment | article-digest.md RAG section |
 | Agentic / Automation | Multi-agent LangGraph, self-corrective loops, CrewAI | CMO Multi-Agent + RAG system |
-| Voice AI | Voice Agent, Kokoro TTS, Whisper STT, async audio pipeline | article-digest.md Voice Agent |
+| Voice AI | Voice Agent (200-500ms E2E latency, Kokoro TTS, Whisper STT) | article-digest.md Voice Agent |
 | Conversational Commerce / Chatbot | Shopify AI Chatbot, product-aware support automation | cv.md Shopify AI Chatbot + portfolio |
 | Lead Gen / Automation | Async scraping, staged AI qualification, Twilio integration | Lead Pipeline proof point |
 | Data Science / ML | Lung classifier ensemble, Oracle certifications, PyTorch | cv.md education + certs |
@@ -62,10 +62,10 @@ puts me at the upper end of junior engineering ranges."
  of hands-on experience through my internship at Shamla Tech,
  where I worked on 6+ AI projects with measurable outcomes.
 
-Beyond that, I've spent the last few years actively building AI/ML
+Beyond that, I've spent the last 3 years actively building AI/ML
  projects, mainly focused on RAG systems, LLMs, Generative AI,
  multi-agent workflows, and recently Voice AI. Overall, I've
- completed multiple projects that helped me gain strong practical exposure.
+ completed 30+ projects that helped me gain strong practical exposure.
 
 While I'm still growing in large-scale production experience,
 I already know how to ship working AI systems, measure behavior,

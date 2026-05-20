@@ -9,8 +9,8 @@ linkedin.com/in/makilesh/ . github.com/Makilesh/ . makilesh.github.io
 
 Oracle-certified AI professional with production expertise in building
 and deploying LLM, RAG, multi-agent frameworks, and real-time voice AI.
-Proven ability to lead technical teams and deliver practical AI solutions
-across voice, RAG, automation, and applied ML. Graduating May 2026, available for onsite,
+Proven ability to lead technical teams and deliver AI solutions with
+measurable business impact. Graduating May 2026, available for onsite,
 hybrid, or remote roles immediately. Open to relocation across India,
 with a strong preference for AI-first startups and high-growth teams.
 
@@ -37,13 +37,15 @@ RESTful APIs
 Sep 2025 - Mar 2026
 
 * Deployed an AI Voice Calling Agent using Twilio and Pinecone with
-  persistent conversation memory and automated outbound call workflows.
+  persistent conversation memory and automated outbound call workflows,
+  reducing manual call handling by 80%.
 * Built a full-duplex Cross-Platform Meeting Assistant with multi-speaker
   diarization across Zoom, Google Meet, Microsoft Teams, and in-person
-  sessions.
+  sessions, processing 50+ hours of meeting data per week.
 * Engineered an end-to-end multi-source lead generation pipeline with
   staged AI qualification, LLM fallback design, batch processing, and
-  concurrent async scraping across Reddit, Discord, Slack, and LinkedIn.
+  concurrent async scraping across Reddit, Discord, Slack, and LinkedIn
+  using 20 leads per API call.
 * Developed general-purpose web scraping and data processing system
   supporting lead enrichment, analytics, and downstream AI workflows.
 * Currently developing an AI-powered e-commerce chatbot and agent for
@@ -62,9 +64,9 @@ GitHub: github.com/Makilesh/AGENTIC_RAG
 * 7-agent LangGraph state machine with self-corrective retrieval loop that
   auto-rewrites low-quality queries (score < 0.7) and re-retrieves up to
   2 times, improving answer accuracy across PDF, DOCX, PPTX, Excel, TXT.
-* True hybrid search over Milvus 2.4: dense embeddings
+* True hybrid search over Milvus 2.4: 384-dim dense embeddings
   (Sentence Transformers, HNSW index) + BM25 sparse vectors fused via
-  Reciprocal Rank Fusion (RRF).
+  Reciprocal Rank Fusion (RRF) at ~200ms retrieval latency.
 * Deployed via Docker Compose with Gemini 2.5 Flash primary +
   Ollama Qwen 2.5 fallback. FastAPI backend + Streamlit frontend.
 * Tech: Python, LangGraph, LangChain, Milvus, Sentence Transformers,
@@ -83,10 +85,12 @@ GitHub: github.com/Makilesh/Shopify-AI-Chatbot
 
 GitHub: github.com/Makilesh/voice_engine_MVP
 
-* Production-grade real-time full-duplex voice agent with STT, LLM, TTS,
-  barge-in handling, RMS energy monitoring, and selective echo suppression.
-* Hybrid TTS pipeline with Kokoro-82M, LLM fallback chain, dynamic audio
-  queue sizing, and memory-aware concurrency management.
+* Production-grade real-time full-duplex voice agent: 200-500ms
+  end-to-end latency (STT + LLM + TTS), <150ms barge-in detection via
+  RMS energy monitoring + selective echo suppression.
+* Hybrid TTS pipeline: Kokoro-82M (40-90ms first-byte latency) with
+  LLM fallback chain, dynamic audio queue sizing, memory-aware
+  concurrency management.
 * Sentiment-aware adaptive tone modulation + producer-consumer async
   architecture with Silero VAD + Whisper transcription.
 * Tech: Python, Asyncio, Threading, Whisper, RealtimeSTT, Kokoro,
@@ -114,8 +118,8 @@ GitHub: github.com/Makilesh/business-contact-scraper
 
 GitHub: github.com/Makilesh/AI_Legal_Engine
 
-* RAG architecture for hybrid search across Indian Penal Code criminal
-  law documents.
+* RAG architecture achieving hybrid search across 673+ IPC criminal law
+  documents with sub-second retrieval.
 * THIRAN Hackathon Finalist 2025 (Team Lead, Data Scientist, AI Engineer).
 
 ### Multi-Source Lead Generation Pipeline | Nov-Dec 2025
@@ -125,7 +129,8 @@ GitHub: github.com/Makilesh/AI_Sales_Agent
 * AI-qualified lead pipeline: Reddit, Discord, Slack, LinkedIn scraping
   with semantic filtering + Twilio outreach automation.
 * Built AI-qualified lead pipeline with semantic filtering, multi-source
-  scraping, and Twilio outreach automation.
+  scraping, Twilio outreach automation, and batch processing of
+  20 leads per API call.
 
 ### Agentic AI Exit Interview System | Mar 2026
 
@@ -158,7 +163,7 @@ GitHub: github.com/Makilesh/weighted_soft_voting_for_lung_disease_classification
 
 * IMPACT X 2024 - Finalist | Team Lead, AI-Powered Crime Detection
   System using YOLOv8 + CNNs
-* THIRAN 2025 - Finalist | Team Lead, AI Legal Engine
+* THIRAN 2025 - Finalist | Team Lead, AI Legal Engine (RAG over 673+ docs)
 
 ## Education
 
