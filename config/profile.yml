@@ -1,11 +1,11 @@
 candidate:
   full_name: "Makilesh M"
-  email: "[makilesh24225@gmail.com](mailto:makilesh24225@gmail.com)"
+  email: "makilesh24225@gmail.com"
   phone: "+919894419452"
   location: "Bangalore / Hyderabad / Chennai, India"
-  linkedin: "[https://linkedin.com/in/makilesh/](https://linkedin.com/in/makilesh/)"
-  github: "[https://github.com/Makilesh/](https://github.com/Makilesh/)"
-  portfolio_url: "[https://makilesh.github.io/](https://makilesh.github.io/)"
+  linkedin: "https://linkedin.com/in/makilesh/"
+  github: "https://github.com/Makilesh/"
+  portfolio_url: "https://makilesh.github.io/"
   portfolio_display: "makilesh.github.io"
 
 target_roles:

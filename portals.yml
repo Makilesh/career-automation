@@ -253,7 +253,7 @@ pipeline:
   min_score_for_pdf: 3.5
   hard_reject_experience_years: 4
   accept_portfolio_in_lieu: true
-  always_include_portfolio_url: "makilesh.github.io"
+  always_include_portfolio_url: "https://makilesh.github.io/"
   always_link_github_projects: 2
   availability: "Immediately"
   remind_tracker_after_session: true
