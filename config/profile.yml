@@ -26,7 +26,9 @@ target_roles:
     - "Conversational AI"
 
   negative:
+    - "4+ years"
     - "5+ years"
+    - "6+ years"
     - "8+ years"
     - "10+ years"
     - "Director"
@@ -55,7 +57,32 @@ target_roles:
 
 narrative:
   headline: "Oracle-certified AI engineer building production LLM, RAG, and voice AI systems"
-  exit_story: "Built 8 production AI systems during internship at Shamla Tech Solutions and 30+ independent AI projects spanning voice agents, multi-agent frameworks, agentic RAGs, and lead automation. Oracle-certified in both GenAI and Data Science. Graduating May 2026 and available immediately for onsite, hybrid, or remote AI engineering roles."
+  exit_story: "Built production-oriented AI systems during internship at Shamla Tech Solutions and independent AI projects spanning voice agents, multi-agent frameworks, agentic RAGs, chatbot automation, and lead automation. Oracle-certified in both GenAI and Data Science. Graduating May 2026 and available immediately for onsite, hybrid, or remote AI engineering roles."
+  superpowers:
+    - "Shipping practical LLM/RAG systems with vector databases and deployment packaging"
+    - "Building real-time voice AI and conversational AI workflows"
+    - "Designing multi-agent systems with LangGraph, CrewAI, and self-corrective loops"
+    - "Designing LLM workflows with batching, fallbacks, and async automation"
+    - "Turning portfolio projects into role-specific proof points"
+  proof_points:
+    - name: "Agentic RAG System"
+      url: "https://github.com/Makilesh/AGENTIC_RAG"
+      proof: "LangGraph RAG system with hybrid Milvus retrieval, query rewrite, and deployment packaging"
+    - name: "AI-Powered Voice Agent"
+      url: "https://github.com/Makilesh/voice_engine_MVP"
+      proof: "Full-duplex voice agent with STT, LLM, TTS, barge-in handling, and async audio pipeline"
+    - name: "Shopify AI Chatbot"
+      url: "https://github.com/Makilesh/Shopify-AI-Chatbot"
+      proof: "Conversational commerce chatbot project for e-commerce support automation"
+    - name: "Business Contact Scraper"
+      url: "https://github.com/Makilesh/business-contact-scraper"
+      proof: "Business contact extraction workflow for lead discovery and enrichment"
+
+source_links:
+  resume_pdf: "Resume_Makilesh.pdf"
+  portfolio: "https://makilesh.github.io/"
+  linkedin: "https://www.linkedin.com/in/makilesh/"
+  github: "https://github.com/Makilesh/"
 
 compensation:
   target_range: "₹8-12 LPA (India)"
@@ -69,3 +96,9 @@ location:
   timezone: "IST (UTC+5:30)"
   visa_status: "Indian citizen, no sponsorship needed for India. Would need visa sponsorship for US/EU/UK."
   onsite_availability: "Available Immediately. Open to immediate start for remote roles."
+
+evaluation_rules:
+  experience_filter: "Only evaluate roles requiring 0-3 years, or roles that explicitly accept strong project/portfolio experience."
+  hard_reject_experience_years: 4
+  portfolio_required_in_outputs: true
+  github_projects_per_application: 2

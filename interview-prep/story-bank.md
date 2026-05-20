@@ -30,7 +30,7 @@ This file accumulates your best interview stories over time. Each evaluation (Bl
 **S (Situation):** Needed robust answers across PDFs, DOCX, PPTX, Excel, and TXT files where naive retrieval could fail.
 **T (Task):** Build a reliable RAG system with measurable retrieval quality and recoverable query failures.
 **A (Action):** Built a 7-agent LangGraph workflow with hybrid Milvus retrieval, dense embeddings, sparse BM25 vectors, RRF fusion, query scoring, and auto-rewrite for low-quality queries.
-**R (Result):** Delivered ~200ms retrieval latency with a self-corrective loop that re-retrieves up to 2 times when query quality is low.
+**R (Result):** Delivered a self-corrective retrieval loop that re-retrieves up to 2 times when query quality is low.
 **Reflection:** Retrieval quality should be measured and corrected inside the workflow, not treated as a one-shot embedding lookup.
 **Best for questions about:** RAG, vector databases, LLM apps, architecture decisions, debugging AI quality.
 
@@ -39,6 +39,6 @@ This file accumulates your best interview stories over time. Each evaluation (Bl
 **S (Situation):** Real-time AI voice interaction needed low latency, interruption handling, and stable audio flow.
 **T (Task):** Build a full-duplex voice agent that could handle STT, LLM response, TTS, and barge-in.
 **A (Action):** Combined Whisper, Kokoro, async producer-consumer queues, RMS energy monitoring, selective echo suppression, and sentiment-aware tone modulation.
-**R (Result):** Achieved 200-500ms end-to-end latency and <150ms barge-in detection.
+**R (Result):** Built a full-duplex voice workflow with STT, LLM, TTS, async audio queues, and barge-in handling.
 **Reflection:** Conversational AI is a systems problem across audio, inference, memory, queues, and UX timing.
 **Best for questions about:** Conversational AI, production systems, latency optimization, async architecture.

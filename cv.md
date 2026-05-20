@@ -9,8 +9,8 @@ linkedin.com/in/makilesh/ . github.com/Makilesh/ . makilesh.github.io
 
 Oracle-certified AI professional with production expertise in building
 and deploying LLM, RAG, multi-agent frameworks, and real-time voice AI.
-Proven ability to lead technical teams and deliver AI solutions with
-measurable business impact. Graduating May 2026, available for onsite,
+Proven ability to lead technical teams and deliver practical AI solutions
+across voice, RAG, automation, and applied ML. Graduating May 2026, available for onsite,
 hybrid, or remote roles immediately. Open to relocation across India,
 with a strong preference for AI-first startups and high-growth teams.
 
@@ -36,18 +36,19 @@ RESTful APIs
 
 Sep 2025 - Mar 2026
 
-* Deployed a production-grade AI Voice Calling Agent (Twilio + Pinecone)
-  enabling 100+ automated outbound calls per week with zero manual
-  intervention, reducing manual call handling by 80%.
-* Built a full-duplex Cross-Platform Meeting Assistant with real-time
-  10-speaker diarization across Zoom, Google Meet, Microsoft Teams, and
-  in-person sessions, processing 50+ hours of meeting data per week.
+* Deployed an AI Voice Calling Agent using Twilio and Pinecone with
+  persistent conversation memory and automated outbound call workflows.
+* Built a full-duplex Cross-Platform Meeting Assistant with multi-speaker
+  diarization across Zoom, Google Meet, Microsoft Teams, and in-person
+  sessions.
 * Engineered an end-to-end multi-source lead generation pipeline with
-  3-stage AI qualification (GPT-4 + Gemini + Ollama fallback), achieving
-  94.6% lower LLM API costs via batch processing (20 leads/API call) and
-  concurrent async scraping across Reddit, Discord, Slack, LinkedIn.
+  staged AI qualification, LLM fallback design, batch processing, and
+  concurrent async scraping across Reddit, Discord, Slack, and LinkedIn.
 * Developed general-purpose web scraping and data processing system
   supporting lead enrichment, analytics, and downstream AI workflows.
+* Currently developing an AI-powered e-commerce chatbot and agent for
+  Shopify, enabling intelligent product discovery, customer support, and
+  personalized shopping experiences.
 * Tech Stack: Python, LangChain, Twilio API, RealtimeSTT/TTS, Whisper,
   Pinecone, pyannote.audio, OpenAI/Gemini APIs, Selenium, Playwright,
   PRAW, Discord.py, Slack SDK, AsyncIO, Flask
@@ -61,24 +62,31 @@ GitHub: github.com/Makilesh/AGENTIC_RAG
 * 7-agent LangGraph state machine with self-corrective retrieval loop that
   auto-rewrites low-quality queries (score < 0.7) and re-retrieves up to
   2 times, improving answer accuracy across PDF, DOCX, PPTX, Excel, TXT.
-* True hybrid search over Milvus 2.4: 384-dim dense embeddings
+* True hybrid search over Milvus 2.4: dense embeddings
   (Sentence Transformers, HNSW index) + BM25 sparse vectors fused via
-  Reciprocal Rank Fusion (RRF) at ~200ms retrieval latency.
+  Reciprocal Rank Fusion (RRF).
 * Deployed via Docker Compose with Gemini 2.5 Flash primary +
   Ollama Qwen 2.5 fallback. FastAPI backend + Streamlit frontend.
 * Tech: Python, LangGraph, LangChain, Milvus, Sentence Transformers,
   Gemini, Ollama, FastAPI, Streamlit, Docker, PyMuPDF, Pandas
 
+### Shopify AI Chatbot | In Progress
+
+GitHub: github.com/Makilesh/Shopify-AI-Chatbot
+
+* Building AI chatbot for Shopify e-commerce workflows with product-aware
+  conversational UX and automation-oriented support flows.
+* Relevant for AI assistant, conversational commerce, customer support AI,
+  and applied LLM product roles.
+
 ### AI-Powered Voice Agent | Sep-Nov 2025
 
 GitHub: github.com/Makilesh/voice_engine_MVP
 
-* Production-grade real-time full-duplex voice agent: 200-500ms
-  end-to-end latency (STT + LLM + TTS), <150ms barge-in detection via
-  RMS energy monitoring + selective echo suppression.
-* Hybrid TTS pipeline: Kokoro-82M (40-90ms first-byte latency) with
-  LLM fallback chain, dynamic audio queue sizing, memory-aware
-  concurrency management.
+* Production-grade real-time full-duplex voice agent with STT, LLM, TTS,
+  barge-in handling, RMS energy monitoring, and selective echo suppression.
+* Hybrid TTS pipeline with Kokoro-82M, LLM fallback chain, dynamic audio
+  queue sizing, and memory-aware concurrency management.
 * Sentiment-aware adaptive tone modulation + producer-consumer async
   architecture with Silero VAD + Whisper transcription.
 * Tech: Python, Asyncio, Threading, Whisper, RealtimeSTT, Kokoro,
@@ -93,12 +101,21 @@ GitHub: github.com/Makilesh/Chief_Marketing_Officer_Agent
 * Self-corrective critique loop rejecting poor strategies and replanning
   up to 3 iterations autonomously.
 
+### Business Contact Scraper | Jan 2026
+
+GitHub: github.com/Makilesh/business-contact-scraper
+
+* Built contact and lead extraction workflow for business discovery and
+  enrichment use cases.
+* Relevant for data collection, automation, sales intelligence, and
+  AI-assisted lead generation roles.
+
 ### AI Legal Engine | Jun 2025
 
 GitHub: github.com/Makilesh/AI_Legal_Engine
 
-* RAG architecture achieving hybrid search across 673+ IPC criminal law
-  documents with sub-second retrieval.
+* RAG architecture for hybrid search across Indian Penal Code criminal
+  law documents.
 * THIRAN Hackathon Finalist 2025 (Team Lead, Data Scientist, AI Engineer).
 
 ### Multi-Source Lead Generation Pipeline | Nov-Dec 2025
@@ -107,7 +124,8 @@ GitHub: github.com/Makilesh/AI_Sales_Agent
 
 * AI-qualified lead pipeline: Reddit, Discord, Slack, LinkedIn scraping
   with semantic filtering + Twilio outreach automation.
-* 94.6% reduction in lead generation operational costs.
+* Built AI-qualified lead pipeline with semantic filtering, multi-source
+  scraping, and Twilio outreach automation.
 
 ### Agentic AI Exit Interview System | Mar 2026
 
@@ -130,6 +148,9 @@ GitHub: github.com/Makilesh/weighted_soft_voting_for_lung_disease_classification
 
 * Oracle Cloud Infrastructure 2025 Certified Generative AI Professional
 * Oracle Cloud Infrastructure 2025 Certified Data Science Professional
+* Infosys Springboard Artificial Intelligence Primer Certification
+* Infosys Springboard Principles of Generative AI Certification
+* Cambridge English Linguaskill Certification - B2 Level
 * Udemy Complete ML, NLP Bootcamp - MLOps & Deployment (2024)
 * NPTEL Python for Data Science (2024)
 
@@ -137,7 +158,7 @@ GitHub: github.com/Makilesh/weighted_soft_voting_for_lung_disease_classification
 
 * IMPACT X 2024 - Finalist | Team Lead, AI-Powered Crime Detection
   System using YOLOv8 + CNNs
-* THIRAN 2025 - Finalist | Team Lead, AI Legal Engine (RAG over 673+ docs)
+* THIRAN 2025 - Finalist | Team Lead, AI Legal Engine
 
 ## Education
 

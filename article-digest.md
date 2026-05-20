@@ -2,24 +2,56 @@
 
 ## Shamla Tech Internship (Sep 2025 - Mar 2026)
 
-**Hero metrics:**
+**Proof points:**
+- AI Voice Calling Agent: automated outbound calling with persistent
+  conversation memory and Twilio + Pinecone integration
+- Meeting Assistant: multi-speaker diarization and expert-response
+  RAG support
+- Lead Pipeline: staged AI qualification with batching, fallback design,
+  and async scraping
 
 **Architecture highlights:**
 - Voice Agent: Twilio + Pinecone + persistent conversation memory
   -> context-aware dynamic responses
-- Meeting Assistant: real-time 10-speaker diarization, wake-word
+- Meeting Assistant: multi-speaker diarization, wake-word
   activation, RAG for expert responses
 - Lead generation Pipeline: 3-stage AI qualification, batch processing
-  (20 leads/API call), concurrent async scraping in linkedin, discord
-  slack, reddit
+  and concurrent async scraping in LinkedIn, Discord, Slack, and Reddit
+
+---
+
+## Shopify AI Chatbot (In Progress)
+
+**Proof points:**
+- Public portfolio project for Shopify/e-commerce AI chatbot workflows
+- Strong fit for conversational commerce, AI support automation, and
+  customer-facing LLM product roles
+
+**Architecture direction:**
+- Product-aware chatbot flows
+- E-commerce support automation
+- LLM assistant UX for store operations and customer queries
+
+---
+
+## Business Contact Scraper (Jan 2026)
+
+**Proof points:**
+- Business contact discovery and enrichment workflow
+- Supports lead generation, data collection, and sales intelligence use cases
+
+**Architecture direction:**
+- Web data extraction
+- Contact enrichment pipeline
+- Downstream integration with AI lead qualification workflows
 
 ---
 
 ## Agentic RAG System (Jan-Feb 2026)
 
-**Hero metrics:**
+**Proof points:**
 - 7-agent LangGraph state machine
-- ~200ms retrieval latency in Milvus 2.4
+- Hybrid retrieval in Milvus 2.4
 - Self-corrective loop: auto-rewrites queries scoring < 0.7,
   re-retrieves up to 2 times
 - Supports PDF, DOCX, PPTX, Excel, TXT ingestion
@@ -35,10 +67,11 @@
 
 ## AI Voice Agent (Sep-Nov 2025)
 
-**Hero metrics:**
-- 200-500ms end-to-end latency (STT + LLM + TTS)
-- <150ms barge-in detection
-- 40-90ms first-byte TTS latency (Kokoro-82M)
+**Proof points:**
+- Full-duplex STT + LLM + TTS pipeline
+- CUDA auto-detection and configurable voice personas
+- Barge-in detection
+- Kokoro-82M TTS integration
 
 **Architecture:**
 - Producer-consumer async architecture
@@ -51,18 +84,17 @@
 
 ## AI Legal Engine (Jun 2025 | THIRAN Hackathon Finalist)
 
-**Hero metrics:**
-- Hybrid search across 673+ Indian Penal Code documents
-- Sub-second retrieval
+**Proof points:**
+- Hybrid search across Indian Penal Code documents
+- RAG workflow for legal document retrieval
 - Hackathon finalist 2025
 
 ---
 
 ## Lead Generation Pipeline (Nov-Dec 2025)
 
-**Hero metrics:**
-- 94.6% reduction in LLM API costs
-- Batch processing: 20 leads per API call
+**Proof points:**
+- Batch processing for LLM qualification
 - Sources: Reddit, Discord, Slack, LinkedIn
 - Qualification: pre-filter + dual LLM (GPT-4 + Gemini + Ollama fallback)
 - Competitor detection included

@@ -13,16 +13,17 @@
 
 | If the role is... | Emphasize... | Key proof points |
 |-------------------|--------------|-----------------|
-| LLMOps / Platform | Agentic RAG (7-agent, Milvus, 200ms), production deployment | article-digest.md RAG section |
+| LLMOps / Platform | Agentic RAG, Milvus, hybrid retrieval, production deployment | article-digest.md RAG section |
 | Agentic / Automation | Multi-agent LangGraph, self-corrective loops, CrewAI | CMO Multi-Agent + RAG system |
-| Voice AI | Voice Agent (200-500ms E2E latency, Kokoro TTS, Whisper STT) | article-digest.md Voice Agent |
-| Lead Gen / Automation | 94.6% cost savings, async scraping, Twilio integration | Lead Pipeline proof point |
+| Voice AI | Voice Agent, Kokoro TTS, Whisper STT, async audio pipeline | article-digest.md Voice Agent |
+| Conversational Commerce / Chatbot | Shopify AI Chatbot, product-aware support automation | cv.md Shopify AI Chatbot + portfolio |
+| Lead Gen / Automation | Async scraping, staged AI qualification, Twilio integration | Lead Pipeline proof point |
 | Data Science / ML | Lung classifier ensemble, Oracle certifications, PyTorch | cv.md education + certs |
 
 ## Exit Narrative
 
 Fresh graduate (May 2026) who has been building production AI systems -
-not toy projects - since 2023. Has real internship and project Experience
+not toy projects - since 2023. Has real internship and project experience.
 Oracle-certified in both GenAI and Data Science. Portfolio live at
 makilesh.github.io with GitHub links to all projects.
 
@@ -30,12 +31,18 @@ makilesh.github.io with GitHub links to all projects.
 
 - ALWAYS mention the portfolio URL (makilesh.github.io) in PDF summaries
 - ALWAYS include GitHub links to the most relevant project for the role
-- Graduating may 2026 - frame as "available immediately"
+- Graduating May 2026 - frame as "available immediately"
 - For Indian market roles: target ₹6-18 LPA depending on company size
 - For international/remote: target $30K-$100K
-- Do NOT apply to roles requiring 3+ years experience (hard filter)
+- ONLY evaluate roles requiring 0-3 years experience, or roles that
+  explicitly accept strong portfolio/project experience
+- Do NOT apply to roles requiring 4+ years experience unless the JD
+  explicitly says portfolio/project experience can substitute
 - For roles asking for "senior" experience, only apply if the JD clearly
   accepts strong portfolio/project experience in lieu of years
+- For chatbot/e-commerce/support-AI roles, include Shopify AI Chatbot
+- For data collection, lead generation, or sales intelligence roles,
+  include Business Contact Scraper and AI Sales Agent
 
 ## Negotiation Scripts
 
@@ -55,14 +62,14 @@ puts me at the upper end of junior engineering ranges."
  of hands-on experience through my internship at Shamla Tech,
  where I worked on 6+ AI projects with measurable outcomes.
 
-Beyond that, I've spent the last 3 years actively building AI/ML
+Beyond that, I've spent the last few years actively building AI/ML
  projects, mainly focused on RAG systems, LLMs, Generative AI,
  multi-agent workflows, and recently Voice AI. Overall, I've
- completed 30+ projects that helped me gain strong practical exposure.
+ completed multiple projects that helped me gain strong practical exposure.
 
-While I'm still growing in terms of large-scale production
-experience, I learn quickly, adapt fast, and I'm genuinely
-passionate about AI."
+While I'm still growing in large-scale production experience,
+I already know how to ship working AI systems, measure behavior,
+debug failures, and improve them quickly."
 
 ## Location Policy
 

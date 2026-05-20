@@ -19,6 +19,9 @@ title_filter:
     - "Agent"
     - "Agentic"
     - "Voice AI"
+    - "AI Chatbot"
+    - "Chatbot"
+    - "Conversational Commerce"
     - "NLP Engineer"
     - "MLOps"
     - "LangChain"
@@ -33,9 +36,13 @@ title_filter:
     - "AI Developer"
     - "Machine Learning"
     - "Deep Learning"
+    - "AI Automation"
+    - "AI Intern"
 
   negative:
+    - "4+ years"
     - "5+ years"
+    - "6+ years"
     - "8+ years"
     - "10+ years"
     - "Director"
@@ -219,6 +226,10 @@ score_boosts:
       boost: 0.2
     - term: "LangChain"
       boost: 0.2
+    - term: "Chatbot"
+      boost: 0.2
+    - term: "Conversational Commerce"
+      boost: 0.2
     - term: "startup"
       boost: 0.7
 
@@ -240,7 +251,7 @@ score_boosts:
 
 pipeline:
   min_score_for_pdf: 3.5
-  hard_reject_experience_years: 5
+  hard_reject_experience_years: 4
   accept_portfolio_in_lieu: true
   always_include_portfolio_url: "makilesh.github.io"
   always_link_github_projects: 2

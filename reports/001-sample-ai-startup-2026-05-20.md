@@ -39,13 +39,13 @@
 | LangChain or similar | Skills and internship stack include LangChain; projects include LangGraph and CrewAI | Strong |
 | Vector databases | Skills include Pinecone, FAISS, ChromaDB, Weaviate, Milvus; projects use Milvus and Pinecone | Strong |
 | Prompt engineering | Skills include Prompt Engineering; RAG and multi-agent projects demonstrate applied usage | Strong |
-| 1-2 years or strong portfolio accepted | Fresh graduate with internship plus 30+ AI projects and live portfolio at makilesh.github.io | Strong |
+| 1-2 years or strong portfolio accepted | Fresh graduate with internship experience, practical AI projects, and live portfolio at makilesh.github.io | Strong |
 
 **Gaps and mitigation:**
 
 | Gap | Blocker? | Mitigation |
 |---|---:|---|
-| No named production scale metrics beyond internship/project scope | No | Lead with concrete metrics: 100+ calls/week, 50+ meeting hours/week, 94.6% cost reduction, 200ms retrieval latency. |
+| Limited full-time production tenure | No | Lead with system design evidence: RAG, vector DBs, voice AI, fallback chains, async scraping, and deployment packaging. |
 | Role may expect direct startup product ownership | Nice-to-have | Frame Shamla Tech work as production delivery under business constraints, not coursework. |
 | Team stack may differ from LangChain/LangGraph | No | Emphasize transferable RAG architecture: retrieval quality, latency, vector DBs, eval loops, fallback design. |
 
@@ -56,8 +56,8 @@
 **Natural level for Makilesh:** Junior / entry AI Engineer with unusually strong applied AI portfolio.
 
 **Positioning:**
-- "I have 5 months of internship production experience plus 30+ AI projects focused on RAG, LLMs, multi-agent workflows, and voice AI."
-- "I have shipped systems with measurable outcomes: 100+ automated calls/week, 94.6% lower LLM API cost, and ~200ms retrieval latency."
+- "I have internship production exposure plus practical projects focused on RAG, LLMs, multi-agent workflows, and voice AI."
+- "I have built working AI systems with retrieval, orchestration, voice interfaces, fallback chains, and deployment packaging."
 - "My strongest match is building LLM applications that combine retrieval, orchestration, and deployment."
 
 **If downleveled:**
@@ -105,19 +105,19 @@ No live web research was run for this sample JD. Based on the provided salary ba
 
 | # | JD requirement | Story STAR+R | S | T | A | R | Reflection |
 |---|---|---|---|---|---|---|---|
-| 1 | RAG pipelines | Agentic RAG self-corrective retrieval | Needed robust answers across multi-format docs | Build reliable retrieval and answer loop | Built 7-agent LangGraph workflow, hybrid Milvus retrieval, query rewrite loop | ~200ms retrieval latency and better answer quality through retries | Retrieval quality needs scoring, not just embeddings |
-| 2 | Conversational AI | Real-time voice agent | Needed low-latency voice interaction | Reduce lag and support barge-in | Combined Whisper, Kokoro, RMS monitoring, async queues | 200-500ms E2E latency, <150ms barge-in | Voice AI requires systems thinking across audio, LLM, and TTS |
+| 1 | RAG pipelines | Agentic RAG self-corrective retrieval | Needed robust answers across multi-format docs | Build reliable retrieval and answer loop | Built 7-agent LangGraph workflow, hybrid Milvus retrieval, query rewrite loop | More robust answer quality through scoring and retries | Retrieval quality needs scoring, not just embeddings |
+| 2 | Conversational AI | Real-time voice agent | Needed responsive voice interaction | Support interruption handling and stable audio flow | Combined Whisper, Kokoro, RMS monitoring, async queues | Built full-duplex voice workflow with barge-in handling | Voice AI requires systems thinking across audio, LLM, and TTS |
 | 3 | Vector databases | Milvus hybrid search | Dense-only retrieval missed keyword-specific matches | Improve retrieval precision | Combined dense embeddings, sparse BM25 vectors, RRF fusion | Stronger search across PDF/DOCX/PPTX/Excel/TXT | Hybrid retrieval is often better for real documents |
 | 4 | Deployment | Dockerized RAG app | Project needed repeatable local deployment | Package backend, frontend, vector DB, and LLM fallback | Used Docker Compose with FastAPI, Streamlit, Gemini, Ollama | Reproducible app stack | Deployment constraints should shape architecture early |
-| 5 | Startup execution | Lead generation cost optimization | Multi-source lead pipeline had high LLM cost | Lower cost without quality collapse | Batched 20 leads/API call and added fallback chain | 94.6% lower LLM API costs | Cost is a product feature in AI systems |
-| 6 | Strong portfolio | 30+ project body of work | Fresher needed proof beyond coursework | Build public, inspectable projects | Published GitHub repos and portfolio | Clear evidence for portfolio-accepted roles | Portfolio must map directly to business problems |
+| 5 | Startup execution | Lead generation automation | Multi-source lead pipeline needed reliable qualification | Improve quality and workflow reliability | Added batching, fallback chain, and async scraping | Built repeatable lead discovery and qualification flow | Reliability and cost discipline matter in AI systems |
+| 6 | Strong portfolio | Practical project body of work | Fresher needed proof beyond coursework | Build public, inspectable projects | Published GitHub repos and portfolio | Clear evidence for portfolio-accepted roles | Portfolio must map directly to business problems |
 
 **Recommended case study:** Agentic RAG System.
 
 Lead with: "I built a 7-agent LangGraph RAG system with hybrid Milvus retrieval, query scoring, auto-rewrite, and Dockerized deployment. It is the closest match to this role because it combines LLM apps, RAG, vector DBs, and production packaging."
 
 **Red-flag questions and answers:**
-- "You are a fresher. Can you work in production?" Answer with Shamla Tech metrics: 100+ calls/week, 50+ meeting hours/week, 94.6% cost reduction.
+- "You are a fresher. Can you work in production?" Answer with Shamla Tech systems: AI voice calling, meeting assistant, lead automation, and Shopify chatbot work.
 - "Have you used vector DBs beyond tutorials?" Answer with Milvus hybrid retrieval and Pinecone production voice-agent memory.
 - "Can you work hybrid in Bangalore?" Answer: yes, available immediately and open to Bangalore/Hyderabad/Chennai.
 
