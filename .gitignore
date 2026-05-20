@@ -16,6 +16,8 @@ batch/tracker-additions/**/*.tsv
 jds/*
 !jds/.gitkeep
 
+venv/
+
 # User config and customization (never auto-updated)
 config/profile.yml
 portals.yml
