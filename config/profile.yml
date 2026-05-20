@@ -1,0 +1,71 @@
+candidate:
+  full_name: "Makilesh M"
+  email: "[makilesh24225@gmail.com](mailto:makilesh24225@gmail.com)"
+  phone: "+919894419452"
+  location: "Bangalore / Hyderabad / Chennai, India"
+  linkedin: "[https://linkedin.com/in/makilesh/](https://linkedin.com/in/makilesh/)"
+  github: "[https://github.com/Makilesh/](https://github.com/Makilesh/)"
+  portfolio_url: "[https://makilesh.github.io/](https://makilesh.github.io/)"
+  portfolio_display: "makilesh.github.io"
+
+target_roles:
+  primary:
+    - "AI Engineer"
+    - "ML Engineer"
+    - "AI/ML Engineer"
+    - "LLM Engineer"
+    - "Generative AI Engineer"
+    - "AI Developer"
+    - "Applied AI Engineer"
+    - "Data Scientist"
+    - "Voice AI Engineer"
+    - "NLP Engineer"
+    - "MLOps Engineer"
+    - "Agentic AI Engineer"
+    - "RAG Engineer"
+    - "Conversational AI"
+
+  negative:
+    - "5+ years"
+    - "8+ years"
+    - "10+ years"
+    - "Director"
+    - "VP of"
+    - "Blockchain"
+    - "Web3"
+    - "Embedded"
+    - "SAP"
+    - "ERP"
+    - "Mainframe"
+    - "COBOL"
+
+  archetypes:
+    - name: "AI Platform / LLMOps Engineer"
+      level: "Junior/Entry"
+      fit: "primary"
+    - name: "Agentic Workflows / Automation"
+      level: "Junior/Entry"
+      fit: "primary"
+    - name: "AI Forward Deployed Engineer"
+      level: "Junior/Entry"
+      fit: "secondary"
+    - name: "Data Scientist"
+      level: "Junior/Entry"
+      fit: "secondary"
+
+narrative:
+  headline: "Oracle-certified AI engineer building production LLM, RAG, and voice AI systems"
+  exit_story: "Built 8 production AI systems during internship at Shamla Tech Solutions and 30+ independent AI projects spanning voice agents, multi-agent frameworks, agentic RAGs, and lead automation. Oracle-certified in both GenAI and Data Science. Graduating May 2026 and available immediately for onsite, hybrid, or remote AI engineering roles."
+
+compensation:
+  target_range: "₹8-12 LPA (India)"
+  currency: "INR"
+  minimum: "₹6 LPA"
+  location_flexibility: "Open to onsite, hybrid, or remote roles in Bangalore, Hyderabad, or Chennai. Open to relocation across India for strong opportunities, especially AI startups and high-growth teams."
+
+location:
+  country: "India"
+  city: "Bangalore / Hyderabad / Chennai"
+  timezone: "IST (UTC+5:30)"
+  visa_status: "Indian citizen, no sponsorship needed for India. Would need visa sponsorship for US/EU/UK."
+  onsite_availability: "Available Immediately. Open to immediate start for remote roles."

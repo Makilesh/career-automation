@@ -1,0 +1,248 @@
+# portals.yml - Job Search Config for Makilesh M
+# Last updated: May 2026
+# Strategy: AI-native startups (any size) + product companies.
+#            No IT services (TCS/Wipro/Infosys excluded).
+#            open_to_any_startup: true - pipeline will evaluate ANY
+#            AI/ML startup role that clears the title + score filters.
+
+open_to_any_startup: true
+
+title_filter:
+  positive:
+    - "AI Engineer"
+    - "ML Engineer"
+    - "AI/ML Engineer"
+    - "LLM Engineer"
+    - "Generative AI"
+    - "LLM"
+    - "RAG"
+    - "Agent"
+    - "Agentic"
+    - "Voice AI"
+    - "NLP Engineer"
+    - "MLOps"
+    - "LangChain"
+    - "Fresher"
+    - "Entry Level"
+    - "Graduate"
+    - "Junior AI"
+    - "AI Trainee"
+    - "Applied AI"
+    - "Data Scientist"
+    - "Conversational AI"
+    - "AI Developer"
+    - "Machine Learning"
+    - "Deep Learning"
+
+  negative:
+    - "5+ years"
+    - "8+ years"
+    - "10+ years"
+    - "Director"
+    - "VP of"
+    - "Blockchain"
+    - "Web3"
+    - "Embedded"
+    - "SAP"
+    - "ERP"
+    - "Mainframe"
+    - "COBOL"
+    - "Senior Manager"
+    - "Principal Engineer"
+
+tracked_companies:
+  - name: Sarvam AI
+    careers_url: https://jobs.ashbyhq.com/Sarvam
+    notes: "Bangalore. Indian LLM startup."
+    tier: 1
+    enabled: true
+
+  - name: Krutrim (Ola AI)
+    careers_url: https://www.krutrim.com/careers
+    scan_method: websearch
+    scan_query: '"krutrim" AI engineer OR LLM engineer OR generative AI site:linkedin.com OR site:instahyre.com'
+    notes: "Bangalore. Ola's Indian LLM lab."
+    tier: 1
+    enabled: true
+
+  - name: Observe.AI
+    careers_url: https://jobs.lever.co/observeai
+    notes: "Bangalore/SF. Voice AI for contact centers. RAG + voice = direct match."
+    tier: 1
+    enabled: true
+
+  - name: Uniphore
+    careers_url: https://www.uniphore.com/careers
+    scan_method: websearch
+    scan_query: 'site:uniphore.com/careers "AI" OR "ML" OR "NLP" engineer'
+    notes: "Chennai/Global. Conversational AI."
+    tier: 1
+    enabled: true
+
+  - name: Yellow.ai
+    careers_url: https://yellow.ai/careers
+    scan_method: websearch
+    scan_query: '"yellow.ai" careers "AI" OR "NLP" OR "engineer"'
+    notes: "Bangalore. Conversational AI platform."
+    tier: 1
+    enabled: true
+
+  - name: Haptik (JioHaptik)
+    careers_url: https://www.haptik.ai/careers
+    scan_method: websearch
+    scan_query: '"haptik" careers "AI" OR "NLP" OR "ML" engineer'
+    notes: "Mumbai. Conversational AI."
+    tier: 1
+    enabled: true
+
+  - name: Mad Street Den (Vue.ai)
+    careers_url: https://www.madstreetden.com/careers
+    scan_method: websearch
+    scan_query: '"mad street den" OR "vue.ai" "AI" OR "ML" engineer'
+    notes: "Chennai. Retail AI startup."
+    tier: 1
+    enabled: true
+
+  - name: AssemblyAI
+    careers_url: https://jobs.ashbyhq.com/assemblyai
+    notes: "Remote. Speech AI APIs. STT/NLP - voice AI match."
+    tier: 1
+    enabled: true
+
+  - name: Rasa
+    careers_url: https://jobs.ashbyhq.com/rasa
+    notes: "Remote. Open-source conversational AI."
+    tier: 1
+    enabled: true
+
+  - name: Freshworks
+    careers_url: https://jobs.lever.co/freshworks
+    notes: "Chennai/Bangalore. AI-powered SaaS."
+    tier: 2
+    enabled: true
+
+  - name: Zoho AI
+    careers_url: https://careers.zohocorp.com
+    scan_method: websearch
+    scan_query: '"zoho" "AI" OR "ML" OR "deep learning" engineer fresher OR junior'
+    notes: "Chennai. Large engineering org with real AI work."
+    tier: 2
+    enabled: true
+
+  - name: Sprinklr
+    careers_url: https://job-boards.greenhouse.io/sprinklr
+    api: https://boards-api.greenhouse.io/v1/boards/sprinklr/jobs
+    notes: "Gurgaon/Remote. AI-powered CX platform."
+    tier: 2
+    enabled: true
+
+search_queries:
+  - name: Wellfound - Any AI Startup India
+    url: https://wellfound.com/jobs
+    query: '"AI engineer" OR "ML engineer" OR "LLM" OR "generative AI" OR "NLP" India 0-2 years'
+    notes: "Catches any AI startup on Wellfound hiring in India. Scan daily."
+    priority: high
+    enabled: true
+
+  - name: Wellfound - Any AI Startup Remote
+    url: https://wellfound.com/jobs
+    query: '"AI engineer" OR "ML engineer" OR "LLM" OR "generative AI" remote 0-2 years'
+    notes: "Global remote AI startup roles. Wellfound is startup-only - high signal."
+    priority: high
+    enabled: true
+
+  - name: YC Work at a Startup - Any AI Role
+    url: https://www.workatastartup.com/jobs
+    query: '"AI" OR "ML" OR "LLM" OR "generative AI" OR "NLP" engineer junior OR entry OR fresher OR "0-2"'
+    notes: "YC-backed startups only. Very high quality. Scan weekly."
+    priority: high
+    enabled: true
+
+  - name: Cutshort - Any AI/ML Startup India
+    url: https://cutshort.io/jobs
+    query: '"AI" OR "LLM" OR "NLP" OR "RAG" OR "generative AI" engineer India 0-2 years'
+    notes: "Skill-filtered. Strong for Indian startups of all sizes."
+    priority: high
+    enabled: true
+
+  - name: Instahyre - AI Roles India
+    url: https://www.instahyre.com
+    query: 'site:instahyre.com "AI engineer" OR "LLM" OR "RAG" OR "NLP" Bangalore OR Chennai OR Hyderabad OR remote'
+    priority: medium
+    enabled: true
+
+  - name: LinkedIn - India AI Fresher 2026
+    url: https://linkedin.com/jobs
+    query: '"AI engineer" OR "ML engineer" OR "generative AI" "fresher" OR "2026 batch" OR "entry level" Bangalore OR remote India'
+    priority: medium
+    enabled: true
+
+  - name: Naukri - AI ML Fresher India
+    url: https://naukri.com
+    query: '"generative AI" OR "LLM engineer" OR "AI engineer" fresher OR "0-2 years" Bangalore OR Chennai OR remote'
+    notes: "High volume, lower signal. Scan weekly, filter aggressively by title."
+    priority: low
+    enabled: true
+
+  - name: RemoteOK - Global Junior AI
+    url: https://remoteok.com
+    query: '"AI engineer" OR "LLM engineer" OR "generative AI" OR "NLP" entry OR junior OR graduate'
+    priority: medium
+    enabled: true
+
+  - name: WeWorkRemotely - Global AI Roles
+    url: https://weworkremotely.com
+    query: '"AI" OR "ML" OR "LLM" engineer junior OR entry remote'
+    priority: medium
+    enabled: true
+
+  - name: HN Who is Hiring - AI Roles
+    url: https://news.ycombinator.com/item?id=whoishiring
+    query: '"AI" OR "LLM" OR "machine learning" OR "NLP" junior OR entry OR fresher OR "0-2"'
+    notes: "Hacker News monthly thread. High-quality indie startups and remote roles."
+    priority: medium
+    enabled: true
+
+score_boosts:
+  keywords:
+    - term: "Voice AI"
+      boost: 0.3
+    - term: "RAG"
+      boost: 0.3
+    - term: "Multi-agent"
+      boost: 0.3
+    - term: "Agentic"
+      boost: 0.3
+    - term: "LangGraph"
+      boost: 0.2
+    - term: "Milvus"
+      boost: 0.2
+    - term: "LangChain"
+      boost: 0.2
+    - term: "startup"
+      boost: 0.7
+
+  penalties:
+    - term: "TCS"
+      penalty: -1.0
+    - term: "Wipro"
+      penalty: -1.0
+    - term: "Infosys"
+      penalty: -1.0
+    - term: "Accenture"
+      penalty: -0.5
+    - term: "Cognizant"
+      penalty: -0.5
+    - term: "HCL"
+      penalty: -0.5
+    - term: "Capgemini"
+      penalty: -0.5
+
+pipeline:
+  min_score_for_pdf: 3.5
+  hard_reject_experience_years: 5
+  accept_portfolio_in_lieu: true
+  always_include_portfolio_url: "makilesh.github.io"
+  always_link_github_projects: 2
+  availability: "Immediately"
+  remind_tracker_after_session: true
