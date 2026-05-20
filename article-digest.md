@@ -6,8 +6,8 @@
 - AI Voice Calling Agent: automated outbound calling with persistent
   conversation memory, Twilio + Pinecone integration, and 80% reduction
   in manual call handling
-- Meeting Assistant: real-time 10-speaker diarization, 50+ hours of
-  meeting data per week, and expert-response RAG support
+- Meeting Assistant: real-time 10-speaker diarization,
+ and expert-response RAG support
 - Lead Pipeline: staged AI qualification with batching, fallback design,
   async scraping, and 20 leads per API call
 
