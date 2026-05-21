@@ -84,6 +84,13 @@ source_links:
   linkedin: "https://www.linkedin.com/in/makilesh/"
   github: "https://github.com/Makilesh/"
 
+application_materials:
+  resume_strategy: "use_existing_pdf"
+  resume_pdf: "Resume_Makilesh.pdf"
+  generate_tailored_resume_pdf: false
+  generate_tailored_resume_html: false
+  notes: "Always use the existing Resume_Makilesh.pdf for applications. Do not generate new tailored resume PDFs unless explicitly requested in the current conversation."
+
 compensation:
   target_range: "₹8-12 LPA (India)"
   currency: "INR"
