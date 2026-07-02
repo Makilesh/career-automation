@@ -1,0 +1,4 @@
+{
+  "_comment": "Gmail-MCP send log + dedup + daily-cap accounting (§9). GITIGNORED. One object per sent email.",
+  "sent": []
+}
