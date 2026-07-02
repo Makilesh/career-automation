@@ -38,6 +38,10 @@ entries:
     a: "N/A — I'm a fresher (final-year student), so I don't have a current CTC."
     tags: [personal, compensation]
     added: "2026-07-02"
+  - q: "What is your expected CTC / expected salary?"
+    a: "Around ₹8–12 LPA, negotiable based on the role and team."
+    tags: [personal, compensation, subjective]
+    added: "2026-07-02"
   - q: "What is your highest degree / education?"
     a: "B.E. in Computer Science Engineering, Sri Krishna College of Engineering and Technology (CGPA 8.0), graduating May 2026."
     tags: [education]
@@ -71,7 +75,7 @@ entries:
     tags: [personal, links]
     added: "2026-07-02"
   - q: "Are you willing to work from office / relocate?"
-    a: "Yes — Bengaluru is my first choice (onsite/hybrid/remote all fine). Open to remote-India roles, and to Chennai/Coimbatore/Hyderabad/Pune."
+    a: "Yes — I prefer onsite or hybrid roles. Priority: Bangalore, then Hyderabad, then Chennai (within ~100 km is fine). I'm happy to relocate for the right role."
     tags: [personal, location, availability]
     added: "2026-07-02"
 
