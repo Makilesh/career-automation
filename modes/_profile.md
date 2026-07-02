@@ -76,7 +76,15 @@ While I'm still growing in large-scale production experience,
 I already know how to ship working AI systems, measure behavior,
 debug failures, and improve them quickly."
 
-## Location Policy (priority tiers — §2)
+## Location Policy (priority — §2)
+
+- **Work mode: onsite or hybrid preferred.** Remote is deprioritized (not preferred), not excluded.
+- **City priority: Bangalore (P1) → Hyderabad (P2) → Chennai (P3).** Within ~100 km of these is fine.
+- **Coimbatore & remote: deprioritized** — still surface them, just rank lower; only apply if a strong fit.
+- Open to relocating for the right onsite/hybrid role in the priority cities.
+- Deprioritize mass-recruiting service companies unless the user opts in.
+
+
 
 - **P1 — Bengaluru** (top priority; onsite/hybrid all fine)
 - **P2 — Hyderabad** (top priority; onsite/hybrid all fine)
