@@ -112,9 +112,9 @@ evaluation_rules:
 
 # ── Location priority tiers (§2) ─────────────────────────────────────────────
 location_tiers:
-  p1: ["Bengaluru", "Bangalore"]          # top priority
+  p1: ["Bengaluru", "Bangalore"]          # top priority (P1)
   p2_remote_india: ["Remote India", "Remote (India)", "India Remote"]
-  p3_ask_first: ["Chennai", "Coimbatore", "Hyderabad", "Pune"]
+  p3_ask_first: ["Mumbai", "Coimbatore", "Pune"]
 
 # ── Scan defaults (§2) ───────────────────────────────────────────────────────
 scan:
