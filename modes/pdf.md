@@ -1,5 +1,16 @@
 # Mode: pdf — ATS-Optimized PDF Generation
 
+> ## ⛔ DISABLED for Makilesh (§4 — resume is FIXED)
+> The resume is **`Resume_Makilesh.pdf`**, attached to every application
+> **unmodified**. This mode is bypassed: do NOT generate, render, or "tailor" a
+> resume, and do NOT run `generate-pdf.mjs` for a job.
+>
+> If asked to "generate a CV / PDF", explain that the resume is fixed and offer
+> to draft **application answers** (via `apply` mode + `qa-bank.mjs`) or a cover
+> letter (`templates/cover-letter.md`, verbatim) instead.
+>
+> The instructions below are retained only for reference / other forks.
+
 ## Full pipeline
 
 1. Read `cv.md` as the source of truth
