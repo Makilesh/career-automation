@@ -1,0 +1,192 @@
+# portals-boards.yml — Job Boards & Aggregators config (§3, mode: scan-boards)
+# For /career-ops scan-boards. Board/aggregator queries are agent-driven
+# (WebSearch + board-native filters); ATS search queries are also here.
+# Direct company career pages live in startups.yml (mode: scan-startups).
+#
+# Recency + experience filters are applied board-native where possible:
+#   LinkedIn  f_TPR=r86400 (24h) / r3600 (1h) / r604800 (7d); f_E=1,2 (intern/entry)
+#   Naukri    freshness filter (Last 1 day / 3 days)
+#   ATS       updated_at / posted date (scan.mjs --posted also filters)
+
+default_posted_window: "24h"     # 1h | same-day | 24h | 3d | 7d
+
+title_filter:
+  positive:
+    - "AI Engineer"
+    - "ML Engineer"
+    - "AI/ML Engineer"
+    - "LLM Engineer"
+    - "Generative AI"
+    - "GenAI"
+    - "LLM"
+    - "RAG"
+    - "AI Agent"
+    - "Agentic"
+    - "Voice AI"
+    - "NLP Engineer"
+    - "Machine Learning"
+    - "Deep Learning"
+    - "Applied AI"
+    - "AI Developer"
+    - "Data Scientist"
+    - "Fresher"
+    - "Entry Level"
+    - "New Grad"
+    - "Graduate"
+    - "Junior"
+    - "0-1 years"
+    - "AI Intern"
+  negative:
+    - "3+ years"
+    - "4+ years"
+    - "5+ years"
+    - "6+ years"
+    - "8+ years"
+    - "10+ years"
+    - "Senior"
+    - "Staff"
+    - "Principal"
+    - "Lead"
+    - "Manager"
+    - "Director"
+    - "VP of"
+    - "Frontend"      # pure frontend excluded (§2)
+    - "Sales"
+    - "BPO"
+    - "Blockchain"
+    - "Web3"
+    - "SAP"
+    - "COBOL"
+
+# Location gate (P1/P2/P3 — §2). block wins over allow; empty location passes.
+location_filter:
+  allow:
+    - "Bengaluru"
+    - "Bangalore"
+    - "Hyderabad"
+    - "Chennai"
+    - "India"
+    - "Pune"
+  block:
+    - "United States"
+    - "USA"
+    - "Europe"
+    - "London"
+    - "Onsite Only - US"
+
+# Board & aggregator search queries (agent runs these via WebSearch + native filters).
+search_queries:
+  - name: "LinkedIn — AI/ML Fresher India (24h)"
+    url: "https://www.linkedin.com/jobs/search/?keywords=AI%20ML%20Engineer&location=India&f_TPR=r86400&f_E=1%2C2"
+    query: '"AI engineer" OR "ML engineer" OR "generative AI" OR "LLM" fresher OR "entry level" OR "2026 batch" Bangalore OR remote India'
+    board: linkedin
+    native_recency: "f_TPR=r86400"      # swap r3600 (1h) / r604800 (7d)
+    native_experience: "f_E=1,2"        # internship + entry level
+    priority: high
+    enabled: true
+
+  - name: "Naukri — AI/ML Fresher India"
+    url: "https://www.naukri.com/artificial-intelligence-jobs-in-bangalore?experience=0"
+    query: '"generative AI" OR "LLM engineer" OR "AI engineer" fresher OR "0-1 years" Bangalore OR Chennai OR remote'
+    board: naukri
+    native_recency: "Last 1 day"
+    priority: medium
+    enabled: true
+
+  - name: "Instahyre — AI Roles India"
+    url: "https://www.instahyre.com"
+    query: 'site:instahyre.com "AI engineer" OR "LLM" OR "RAG" OR "NLP" Bangalore OR remote'
+    board: instahyre
+    priority: medium
+    enabled: true
+
+  - name: "Cutshort — AI/ML Startup India"
+    url: "https://cutshort.io/jobs"
+    query: '"AI" OR "LLM" OR "NLP" OR "RAG" OR "generative AI" engineer India 0-1 years'
+    board: cutshort
+    priority: high
+    enabled: true
+
+  - name: "Wellfound — AI Startup India + Remote"
+    url: "https://wellfound.com/jobs"
+    query: '"AI engineer" OR "ML engineer" OR "LLM" OR "generative AI" India OR remote 0-1 years'
+    board: wellfound
+    priority: high
+    enabled: true
+
+  - name: "Internshala — AI/ML Jobs & PPO"
+    url: "https://internshala.com/jobs/artificial-intelligence-ai-jobs/"
+    query: '"AI" OR "ML" OR "machine learning" fresher job OR PPO Bangalore OR remote'
+    board: internshala
+    priority: medium
+    enabled: true
+
+  - name: "Hirist — AI/ML India"
+    url: "https://www.hirist.tech"
+    query: 'site:hirist.tech "AI" OR "ML" OR "machine learning" engineer 0-2 years Bangalore OR remote'
+    board: hirist
+    priority: low
+    enabled: true
+
+  - name: "foundit — AI/ML Fresher India"
+    url: "https://www.foundit.in"
+    query: 'site:foundit.in "AI engineer" OR "ML engineer" OR "data scientist" fresher Bangalore OR remote'
+    board: foundit
+    priority: low
+    enabled: true
+
+  - name: "YC Work at a Startup — AI Junior"
+    url: "https://www.workatastartup.com/jobs"
+    query: '"AI" OR "ML" OR "LLM" OR "generative AI" OR "NLP" engineer junior OR entry OR "0-1" India OR remote'
+    board: yc
+    priority: high
+    enabled: true
+
+  - name: "Ashby search — AI Junior India/Remote"
+    url: "https://jobs.ashbyhq.com"
+    query: 'site:jobs.ashbyhq.com "AI" OR "ML" OR "LLM" engineer junior OR "new grad" India OR remote'
+    board: ashby
+    priority: medium
+    enabled: true
+
+  - name: "Greenhouse search — AI Junior India/Remote"
+    url: "https://job-boards.greenhouse.io"
+    query: 'site:job-boards.greenhouse.io "AI" OR "ML" OR "machine learning" engineer junior OR "new grad" India OR remote'
+    board: greenhouse
+    priority: medium
+    enabled: true
+
+  - name: "Lever search — AI Junior India/Remote"
+    url: "https://jobs.lever.co"
+    query: 'site:jobs.lever.co "AI" OR "ML" OR "LLM" engineer junior OR entry India OR remote'
+    board: lever
+    priority: medium
+    enabled: true
+
+  - name: "Workable search — AI Junior India/Remote"
+    url: "https://apply.workable.com"
+    query: 'site:apply.workable.com "AI" OR "ML" engineer junior OR fresher India OR remote'
+    board: workable
+    priority: low
+    enabled: true
+
+score_boosts:
+  keywords:
+    - { term: "startup", boost: 0.7 }
+    - { term: "RAG", boost: 0.3 }
+    - { term: "Voice AI", boost: 0.3 }
+    - { term: "Agentic", boost: 0.3 }
+    - { term: "LangGraph", boost: 0.2 }
+    - { term: "fresher", boost: 0.3 }
+    - { term: "new grad", boost: 0.3 }
+  penalties:
+    - { term: "TCS", penalty: -1.0 }
+    - { term: "Wipro", penalty: -1.0 }
+    - { term: "Infosys", penalty: -1.0 }
+    - { term: "Accenture", penalty: -0.75 }
+    - { term: "Cognizant", penalty: -0.75 }
+
+pipeline:
+  min_score_for_pipeline: 3.5
+  hard_reject_experience_years: 3+     # fresher: reject 2+ yr unless portfolio accepted
+  accept_portfolio_in_lieu: true
