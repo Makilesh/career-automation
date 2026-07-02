@@ -2,6 +2,19 @@ venv/
 node_modules/
 dist/
 *.log
-*.env
 .DS_Store
-nn
+
+# ── Secrets & env ────────────────────────────────────────────────
+.env
+*.env
+!.env.example
+
+# ── Makilesh — personal / generated data (§6, §7, §9, §12) ──────
+data/qa-bank.yml
+data/email-log.json
+data/llm-usage.json
+
+# Generated output (kept out of git)
+output/
+batch/tracker-additions/
+batch/*.txt

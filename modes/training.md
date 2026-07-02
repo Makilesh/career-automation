@@ -1,27 +1,29 @@
-# Modo: training — Evaluación de Formación
+# Mode: training — Course / Certification Evaluation
 
-Para cada curso/cert que el candidato pregunte, evaluar 6 dimensiones:
+For each course/cert the candidate asks about, evaluate 6 dimensions:
 
-| Dimensión | Qué evalúa |
-|-----------|------------|
-| Alineación North Star | ¿Acerca o aleja del objetivo? |
-| Señal recruiter | ¿Qué piensan HMs al ver esto en un CV? |
-| Tiempo y esfuerzo | Semanas × horas/semana |
-| Coste de oportunidad | ¿Qué no puede hacer durante ese tiempo? |
-| Riesgos | ¿Contenido outdated? ¿Brand débil? ¿Demasiado básico? |
-| Entregable portfolio | ¿Produce un artefacto demostrable? |
+| Dimension | What it measures |
+|-----------|------------------|
+| Archetype alignment | Does it move Makilesh toward or away from the 5 fresher AI/ML archetypes? |
+| Recruiter signal | What do hiring managers think when they see this on a fresher CV? |
+| Time & effort | Weeks × hours/week |
+| Opportunity cost | What can't be done during that time (building portfolio projects, applying)? |
+| Risks | Outdated content? Weak brand? Too basic for the profile? |
+| Portfolio deliverable | Does it produce a demonstrable artifact (repo, demo, writeup)? |
 
-## Veredictos
+## Verdicts
 
-- **HACER** → plan de 4-12 semanas con entregables semanales y scoreboard
-- **NO HACER** → alternativa mejor con justificación
-- **HACER CON TIMEBOX** (máx X semanas) → plan condensado, solo lo esencial
+- **DO** → 4–12 week plan with weekly deliverables and a scoreboard
+- **DON'T** → a better alternative with justification
+- **DO WITH TIMEBOX** (max X weeks) → condensed plan, essentials only
 
-## Prioridad
+## Priority (fresher AI/ML credibility)
 
-Formación que mejore credibilidad en "production-grade AI":
-1. Evals y testing de LLMs
-2. Observability y monitoring
-3. Cost/reliability trade-offs
-4. AI governance y safety
-5. Enterprise AI architecture
+Training that improves credibility for early-career, production-minded AI/ML:
+1. LLM/RAG evals and testing
+2. Agent orchestration (LangGraph/CrewAI) with a shipped project
+3. Vector DBs + retrieval quality
+4. MLOps / deployment packaging (Docker, FastAPI)
+5. Applied deep learning / NLP with a portfolio artifact
+
+Note: the resume is fixed (`Resume_Makilesh.pdf`) — a "DO" verdict is about skills and portfolio, not about editing the resume.

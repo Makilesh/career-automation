@@ -1,23 +1,24 @@
-# Modo: tracker — Tracker de Aplicaciones
+# Mode: tracker — Application Tracker
 
-Lee y muestra `data/applications.md`.
+Reads and displays `data/applications.md`.
 
-**Formato del tracker:**
+**Tracker format:**
 ```markdown
-| # | Fecha | Empresa | Rol | Score | Estado | PDF | Report |
+| # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 ```
 
-Estados posibles: `Evaluada` → `Aplicado` → `Respondido` → `Contacto` → `Entrevista` → `Oferta` / `Rechazada` / `Descartada` / `NO APLICAR`
+Canonical statuses (source of truth: `templates/states.yml`): `Evaluated` → `Applied` → `Responded` → `Interview` → `Offer` / `Rejected` / `Discarded` / `SKIP`
 
-- `Aplicado` = el candidato envió su candidatura
-- `Respondido` = Un recruiter/empresa contactó y el candidato respondió (inbound)
-- `Contacto` = El candidato contactó proactivamente a alguien de la empresa (outbound, ej: LinkedIn power move)
+- `Applied` = the candidate submitted their application
+- `Responded` = a recruiter/company reached out and the candidate replied (inbound)
+- `Interview` = in an interview process
 
-Si el usuario pide actualizar un estado, editar la fila correspondiente.
+If the user asks to update a status, edit the matching row (you MAY edit applications.md to update status/notes of existing entries — never to add new rows; new rows go through `merge-tracker.mjs`).
 
-Mostrar también estadísticas:
-- Total de aplicaciones
-- Por estado
-- Score promedio
-- % con PDF generado
-- % con report generado
+Also show statistics:
+- Total applications
+- By status
+- Average score
+- % with resume attached (always `Resume_Makilesh.pdf`)
+- % with report generated
+- Emails sent / follow-ups sent (from `data/email-log.json`)
