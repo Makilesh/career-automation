@@ -27,13 +27,14 @@ const args = process.argv.slice(2);
 const summaryMode = args.includes('--summary');
 const overdueOnly = args.includes('--overdue-only');
 const appliedDaysIdx = args.indexOf('--applied-days');
-const APPLIED_FIRST = appliedDaysIdx !== -1 ? parseInt(args[appliedDaysIdx + 1]) || 7 : 7;
+// Makilesh policy (§11B): ONE follow-up, 6 days after Applied with no reply.
+const APPLIED_FIRST = appliedDaysIdx !== -1 ? parseInt(args[appliedDaysIdx + 1]) || 6 : 6;
 
 // --- Cadence config ---
 const CADENCE = {
   applied_first: APPLIED_FIRST,
-  applied_subsequent: 7,
-  applied_max_followups: 2,
+  applied_subsequent: 6,          // unused (max 1) — kept for compatibility
+  applied_max_followups: 1,       // §11B: never more than one per company+role
   responded_initial: 1,
   responded_subsequent: 3,
   interview_thankyou: 1,

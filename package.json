@@ -15,7 +15,12 @@
     "rollback": "node update-system.mjs rollback",
     "liveness": "node check-liveness.mjs",
     "scan": "node scan.mjs",
-    "gemini:eval": "node gemini-eval.mjs"
+    "scan:boards": "node scan.mjs --config portals-boards.yml",
+    "scan:startups": "node scan.mjs --config startups.yml",
+    "gemini:eval": "node gemini-eval.mjs",
+    "llm": "node llm-router.mjs",
+    "qa": "node qa-bank.mjs",
+    "followup:cadence": "node followup-cadence.mjs"
   },
   "keywords": [
     "ai",
@@ -24,11 +29,14 @@
     "career",
     "automation"
   ],
-  "author": "Santiago Fernández de Valderrama <hi@santifer.io> (https://santifer.io)",
-  "homepage": "https://santifer.io",
+  "author": "Makilesh M <makilesh24225@gmail.com> (https://makilesh.github.io)",
+  "contributors": [
+    "Santiago Fernández de Valderrama <hi@santifer.io> (https://santifer.io) — original career-ops author"
+  ],
+  "homepage": "https://makilesh.github.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/santifer/career-ops"
+    "url": "https://github.com/Makilesh/career-automation"
   },
   "license": "MIT",
   "dependencies": {
