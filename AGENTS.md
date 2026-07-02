@@ -334,6 +334,14 @@ Gmail MCP connected to `makilesh24225@gmail.com` is the PRIMARY and ONLY email t
 
 `scan-boards`/`scan-startups`/`hunt` → dedup → evaluate (fresher-weighted, threshold default 3.5/5) → apply queue → Playwright fills forms from `config/profile.yml` + `qa-bank.mjs`, attaches fixed resume, inserts fixed cover letter → **compact review card per application** (company, role, answers used, NEW questions) with batch approval ("approve all" / "approve 1,3,5") → submit approved → tracker → `Applied` with timestamp + URL. Email applications follow §Email with the same one-click approval. The human gate is what makes the qa-bank learning loop safe — never bypass it.
 
+### Anti-ban (don't get the accounts flagged)
+
+- **LinkedIn: never automate with Playwright** — no auto-connect, auto-message, or scraping while logged in. Referral mode only prepares messages; Makilesh sends them by hand. Use only public/logged-out people-search URLs for discovery.
+- **Forms: behave like a human.** Default headed; fill at a human pace (small random delays between fields, no instant bulk submits); one application at a time, never parallel Playwright sessions; realistic user-agent; don't retry-hammer a failing form.
+- **Email (Gmail MCP): respect the daily cap** (default 500, follow-ups included), never double-send (dedup via `email-log.json`), no identical blasts — the fixed templates + per-company review keep volume human.
+- **Scanning: prefer the zero-token ATS APIs**; throttle WebSearch/Playwright, honor robots/rate limits, and keep the existing concurrency limits. If a site returns 403/429, back off — don't loop.
+- Location preference (onsite/hybrid: Bangalore → Hyderabad → Chennai, ~100 km; remote/Coimbatore deprioritized) is in `config/profile.yml` → `location_tiers` and `modes/_profile.md`.
+
 ## Stack and Conventions
 
 - Node.js (mjs modules), Playwright (scraping + form fill), YAML (config), Markdown (data). Ollama (local LLM) + Gemini API (rotated) + Gmail MCP (email).
