@@ -109,3 +109,54 @@ evaluation_rules:
   hard_reject_experience_years: 4
   portfolio_required_in_outputs: true
   github_projects_per_application: 2
+
+# ── Location priority tiers (§2) ─────────────────────────────────────────────
+location_tiers:
+  p1: ["Bengaluru", "Bangalore"]          # top priority
+  p2_remote_india: ["Remote India", "Remote (India)", "India Remote"]
+  p3_ask_first: ["Chennai", "Coimbatore", "Hyderabad", "Pune"]
+
+# ── Scan defaults (§2) ───────────────────────────────────────────────────────
+scan:
+  default_posted_window: "24h"            # 1h | same-day | 24h | 3d | 7d
+  boards_config: "portals-boards.yml"     # /career-ops scan-boards
+  startups_config: "startups.yml"         # /career-ops scan-startups
+
+# ── Browser automation (§8) ──────────────────────────────────────────────────
+# headless: false = headed (visible, default for testing). true = production.
+# Precedence: CLI --headed/--headless > env CAREER_OPS_HEADED > this config.
+automation:
+  headless: false
+  modes:
+    apply:   { headless: false }          # watch form-filling
+    scan:    { headless: true }            # verify runs headless by default
+
+# ── LLM routing (§7) ─────────────────────────────────────────────────────────
+llm:
+  local_model: "qwen2.5:14b"              # Ollama; falls back to qwen2.5:7b on OOM
+  local_fallback_model: "qwen2.5:7b"
+  ollama_url: "http://localhost:11434"
+  usage_log: "data/llm-usage.json"
+  # Gemini free-tier rotation limits are encoded in llm-router.mjs.
+
+# ── Email applications (§9, Gmail MCP only) ──────────────────────────────────
+email:
+  transport: "gmail-mcp"                  # ONLY transport; no browser fallback
+  account: "makilesh24225@gmail.com"
+  daily_cap: 20                           # follow-ups count toward this
+  subject_template: "Application — {role} — Makilesh M (AI/ML Fresher)"
+  log: "data/email-log.json"
+
+# ── Apply flow (§10) ─────────────────────────────────────────────────────────
+apply:
+  min_score_threshold: 3.5
+  human_gate: true                        # NEVER auto-submit; batch approval
+  resume_pdf: "Resume_Makilesh.pdf"
+  cover_letter: "templates/cover-letter.md"
+  qa_bank: "data/qa-bank.yml"
+
+# ── One-time setup answers (§6/§12 — fill during setup) ──────────────────────
+setup:
+  expected_ctc: null                      # e.g. "₹8-12 LPA"
+  relocation_cities: null                 # e.g. ["Bengaluru", "Hyderabad"]
+  earliest_joining_date: null             # e.g. "Immediate" / "2026-06-01"

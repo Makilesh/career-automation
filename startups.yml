@@ -1,0 +1,87 @@
+# startups.yml — Direct startup career-page watchlist (§3, mode: scan-startups)
+# For /career-ops scan-startups and `node scan.mjs --config startups.yml`.
+#
+# Each entry:
+#   name         company name
+#   careers_url  direct careers/ATS URL (VERIFIED to resolve 2026-07-02)
+#   ats          greenhouse | lever | ashby | workable | workday | notion | custom
+#   city         primary hiring city / Remote
+#   hr_email     optional HR/careers email (enables Gmail-MCP applications §9)
+#   enabled      true/false
+#   tier         1 (top target) | 2 | 3
+#
+# scan.mjs auto-hits greenhouse/ashby/lever entries (zero-token). workday/
+# workable/notion/custom have no zero-token provider — scan-startups mode
+# navigates those with Playwright. Add a company by name:
+# `/career-ops add-startup <name>` (agent finds + verifies the page, appends here).
+
+title_filter:
+  positive:
+    - "AI Engineer"
+    - "ML Engineer"
+    - "AI/ML"
+    - "LLM"
+    - "Generative AI"
+    - "GenAI"
+    - "RAG"
+    - "AI Agent"
+    - "Agentic"
+    - "Voice AI"
+    - "NLP"
+    - "Machine Learning"
+    - "Deep Learning"
+    - "Applied AI"
+    - "Data Scientist"
+    - "AI Developer"
+    - "Fresher"
+    - "New Grad"
+    - "Graduate"
+    - "Junior"
+    - "AI Intern"
+  negative:
+    - "3+ years"
+    - "4+ years"
+    - "5+ years"
+    - "Senior"
+    - "Staff"
+    - "Principal"
+    - "Lead"
+    - "Director"
+    - "VP"
+    - "Frontend"
+    - "Sales"
+
+default_posted_window: "7d"    # startup pages update less often than boards
+
+tracked_companies:
+  # ── India — AI-native startups (Tier 1) ──────────────────────────────
+  - { name: "Sarvam AI",      careers_url: "https://jobs.ashbyhq.com/Sarvam",           ats: ashby,      city: "Bengaluru", tier: 1, enabled: true }
+  - { name: "Observe.AI",     careers_url: "https://job-boards.greenhouse.io/observeai", ats: greenhouse, city: "Bengaluru", tier: 1, enabled: true }
+  - { name: "Skit.ai",        careers_url: "https://skit.ai/careers/",                   ats: custom,     city: "Bengaluru", tier: 1, enabled: true }
+  - { name: "Yellow.ai",      careers_url: "https://careers.yellow.ai/",                 ats: workday,    city: "Bengaluru", tier: 1, enabled: true }
+  - { name: "Gnani.ai",       careers_url: "https://www.gnani.ai/careers",               ats: custom,     city: "Bengaluru", tier: 1, enabled: true }
+  - { name: "Haptik",         careers_url: "https://www.haptik.ai/careers",              ats: custom,     city: "Mumbai",    tier: 1, enabled: true }
+  - { name: "CoRover.ai",     careers_url: "https://corover.ai/company/careers",         ats: custom,     city: "Bengaluru", tier: 1, enabled: true }
+  - { name: "Krutrim",        careers_url: "https://www.olakrutrim.com/",                ats: custom,     city: "Bengaluru", tier: 1, enabled: true }
+  - { name: "Mad Street Den", careers_url: "https://www.madstreetden.com/careers/",      ats: custom,     city: "Chennai",   tier: 1, enabled: true }
+  - { name: "Uniphore",       careers_url: "https://www.uniphore.com/careers/",          ats: custom,     city: "Chennai",   tier: 1, enabled: true }
+
+  # ── India — AI/data product companies (Tier 2-3) ─────────────────────
+  - { name: "Fractal",        careers_url: "https://fractal.wd1.myworkdayjobs.com/Careers", ats: workday, city: "Bengaluru", tier: 2, enabled: true }
+  - { name: "Tiger Analytics", careers_url: "https://www.tigeranalytics.com/careers/",    ats: custom,     city: "Chennai",   tier: 2, enabled: true }
+  - { name: "Sprinklr",       careers_url: "https://www.sprinklr.com/careers/",           ats: custom,     city: "Gurugram/Remote", tier: 2, enabled: true }
+  - { name: "Postman",        careers_url: "https://www.postman.com/company/careers/",    ats: custom,     city: "Bengaluru", tier: 2, enabled: true }
+  - { name: "Razorpay",       careers_url: "https://razorpay.com/careers/",               ats: custom,     city: "Bengaluru", tier: 2, enabled: true }
+  - { name: "Chargebee",      careers_url: "https://www.chargebee.com/careers/",          ats: custom,     city: "Chennai",   tier: 2, enabled: true }
+  - { name: "Freshworks",     careers_url: "https://www.freshworks.com/company/careers/", ats: custom,     city: "Chennai",   tier: 2, enabled: true }
+  - { name: "Zoho",           careers_url: "https://careers.zohocorp.com/jobs/Careers",   ats: custom,     city: "Chennai",   tier: 3, enabled: true }
+
+  # ── Global remote-friendly AI startups (Tier 2-3) ────────────────────
+  - { name: "AssemblyAI",     careers_url: "https://job-boards.greenhouse.io/assemblyai", ats: greenhouse, city: "Remote",   tier: 2, enabled: true }
+  - { name: "Deepgram",       careers_url: "https://jobs.ashbyhq.com/deepgram",           ats: ashby,      city: "Remote",    tier: 2, enabled: true }
+  - { name: "Rasa",           careers_url: "https://jobs.ashbyhq.com/rasa",               ats: ashby,      city: "Remote",    tier: 2, enabled: true }
+  - { name: "LangChain",      careers_url: "https://jobs.ashbyhq.com/langchain",          ats: ashby,      city: "Remote",    tier: 2, enabled: true }
+  - { name: "ElevenLabs",     careers_url: "https://jobs.ashbyhq.com/elevenlabs",         ats: ashby,      city: "Remote",    tier: 2, enabled: true }
+  - { name: "Pinecone",       careers_url: "https://jobs.ashbyhq.com/pinecone",           ats: ashby,      city: "Remote",    tier: 2, enabled: true }
+  - { name: "Weaviate",       careers_url: "https://jobs.ashbyhq.com/weaviate",           ats: ashby,      city: "Remote",    tier: 3, enabled: true }
+  - { name: "Vapi",           careers_url: "https://jobs.ashbyhq.com/vapi",               ats: ashby,      city: "Remote",    tier: 3, enabled: true }
