@@ -31,6 +31,8 @@ export default {
       url: j.jobUrl || '',
       company: entry.name,
       location: j.location || '',
+      // Ashby posting-api exposes publishedAt/updatedAt (ISO).
+      posted: j.publishedAt || j.updatedAt || null,
     }));
   },
 };

@@ -31,6 +31,8 @@ export default {
       url: j.hostedUrl || '',
       company: entry.name,
       location: j.categories?.location || '',
+      // Lever createdAt is epoch ms → ISO string.
+      posted: Number.isFinite(j.createdAt) ? new Date(j.createdAt).toISOString() : null,
     }));
   },
 };

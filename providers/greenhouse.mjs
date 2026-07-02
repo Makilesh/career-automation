@@ -72,6 +72,8 @@ export default {
         url: j.absolute_url,
         company: entry.name,
         location: j.location?.name || '',
+        // Greenhouse exposes updated_at (ISO). first_published may also exist.
+        posted: j.updated_at || j.first_published || j.created_at || null,
       }));
   },
 };
