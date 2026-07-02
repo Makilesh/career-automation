@@ -110,11 +110,15 @@ evaluation_rules:
   portfolio_required_in_outputs: true
   github_projects_per_application: 2
 
-# ── Location priority tiers (§2) ─────────────────────────────────────────────
+# ── Location priority tiers (§2 — onsite/hybrid preferred, ~100km OK) ─────────
 location_tiers:
-  p1: ["Bengaluru", "Bangalore"]          # top priority (P1)
-  p2_remote_india: ["Remote India", "Remote (India)", "India Remote"]
-  p3_ask_first: ["Mumbai", "Coimbatore", "Pune"]
+  work_mode_preference: ["onsite", "hybrid"]   # remote is deprioritized (not preferred)
+  radius_km: 100                                 # within ~100km of a P-city is fine
+  p1: ["Bengaluru", "Bangalore"]                # top priority
+  p2: ["Hyderabad"]
+  p3: ["Chennai"]
+  p4: ["Mumbai"]
+  deprioritized: ["Remote", "Coimbatore"]        # surface but rank lower; do not exclude
 
 # ── Scan defaults (§2) ───────────────────────────────────────────────────────
 scan:
@@ -157,6 +161,6 @@ apply:
 
 # ── One-time setup answers (§6/§12 — fill during setup) ──────────────────────
 setup:
-  expected_ctc: null                      # e.g. "₹8-12 LPA"
-  relocation_cities: null                 # e.g. ["Bengaluru", "Hyderabad"]
-  earliest_joining_date: null             # e.g. "Immediate" / "2026-06-01"
+  expected_ctc: "₹8-12 LPA (negotiable)"
+  relocation_cities: ["Bangalore", "Hyderabad", "Chennai"]  # onsite/hybrid, ~100km OK
+  earliest_joining_date: "Immediate"
