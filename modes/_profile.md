@@ -1,14 +1,15 @@
 # User Profile Context - Makilesh M
 
-## Target Roles
+## Target Roles (5 fresher archetypes, 0–1 yr)
 
-| Archetype | Thematic axes | What they buy |
-|-----------|---------------|---------------|
-| **AI Platform / LLMOps Engineer** | Evals, observability, RAG, pipelines, vector DBs | Someone who ships production AI with metrics |
-| **Agentic Workflows / Automation** | Multi-agent, LangGraph, HITL, orchestration | Someone who builds reliable agent systems end-to-end |
-| **AI Forward Deployed Engineer** | Client-facing, fast delivery, voice AI | Someone who deploys AI solutions and owns outcomes |
-| **Data Scientist / AI/ML Engineer** | Deep learning, NLP, model training, PyTorch | Someone who builds and ships ML models |
-
+| # | Archetype | Thematic axes | What they buy |
+|---|-----------|---------------|---------------|
+| 1 | **AI/ML Engineer (0–1 yr)** | ML models, PyTorch/TF, deployment packaging, applied AI | A fresher who already ships working AI systems, not toy demos |
+| 2 | **GenAI / LLM Engineer (RAG, agents)** | LLMs, RAG, vector DBs, prompt/eval, fine-tuning | Someone who builds production RAG + LLM apps with metrics |
+| 3 | **AI Agent / Automation Engineer** | Multi-agent, LangGraph, CrewAI, orchestration, n8n | Someone who builds reliable autonomous agent workflows |
+| 4 | **Voice AI Engineer** | Real-time STT+LLM+TTS, low latency, diarization | Someone who ships full-duplex voice agents (200–500ms E2E) |
+| 5 | **Data Scientist / ML fresher** | NLP, deep learning, CV, statistics, analytics | Someone who builds & evaluates ML/DS models end-to-end |
+| 6 |**AI Forward Deployed Engineer** | Client-facing, fast delivery, voice AI | Someone who deploys AI solutions and owns outcomes |
 ## Adaptive Framing
 
 | If the role is... | Emphasize... | Key proof points |
@@ -75,11 +76,15 @@ While I'm still growing in large-scale production experience,
 I already know how to ship working AI systems, measure behavior,
 debug failures, and improve them quickly."
 
-## Location Policy
+## Location Policy (priority tiers — §2)
 
-- STRONGLY prefer remote-first roles (India or global)
-- Open to hybrid in Bangalore / Chennai / Hyderabad
-- Open to relocation
+- **P1 — Bengaluru** (top priority; onsite/hybrid all fine)
+- **P2 — Hyderabad** (top priority; onsite/hybrid all fine)
+- **P3 — Chennai ** (top priority; onsite/hybrid all fine)
+- **P2 — Mumbai / Coimbatore / Pune** (ASK before applying)
+- **P3 Global AI startups:** welcome (note visa needed for US/EU/UK relocation)
+- **P4 — Remote-India** (any India-remote AI/ML role)
+- Deprioritize mass-recruiting service companies unless the user opts in
 
 ## Writing Style
 

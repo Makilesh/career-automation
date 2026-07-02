@@ -71,18 +71,20 @@ Block G assesses whether a posting is likely a real, active opening. It does NOT
 - Present signals and let the user decide
 - Always note legitimate explanations for concerning signals
 
-## Archetype Detection
+## Archetype Detection (FRESHER — 0–1 yr AI/ML)
 
-Classify every offer into one of these types (or hybrid of 2):
+This system evaluates for a **new-grad / fresher AI/ML engineer** (graduating May 2026). Classify every offer into one of these 5 archetypes (or a hybrid of 2):
 
-| Archetype | Key signals in JD |
-|-----------|-------------------|
-| AI Platform / LLMOps | "observability", "evals", "pipelines", "monitoring", "reliability" |
-| Agentic / Automation | "agent", "HITL", "orchestration", "workflow", "multi-agent" |
-| Technical AI PM | "PRD", "roadmap", "discovery", "stakeholder", "product manager" |
-| AI Solutions Architect | "architecture", "enterprise", "integration", "design", "systems" |
-| AI Forward Deployed | "client-facing", "deploy", "prototype", "fast delivery", "field" |
-| AI Transformation | "change management", "adoption", "enablement", "transformation" |
+| # | Archetype | Level | Key signals in JD |
+|---|-----------|-------|-------------------|
+| 1 | **AI/ML Engineer** | 0–1 yr / new grad | "AI engineer", "ML engineer", "machine learning", "PyTorch/TensorFlow", "model", "junior", "fresher", "entry level" |
+| 2 | **GenAI / LLM Engineer (RAG, agents)** | 0–1 yr | "LLM", "generative AI", "RAG", "retrieval", "prompt", "vector DB", "embeddings", "fine-tune" |
+| 3 | **AI Agent / Automation Engineer** | 0–1 yr | "agent", "multi-agent", "LangGraph", "CrewAI", "orchestration", "workflow", "automation", "n8n" |
+| 4 | **Voice AI Engineer** | 0–1 yr | "voice", "speech", "STT", "TTS", "ASR", "conversational", "real-time audio", "diarization" |
+| 5 | **Data Scientist / ML fresher** | 0–1 yr | "data scientist", "data science", "NLP", "analytics", "statistics", "deep learning", "computer vision" |
+| 6 |**AI Forward Deployed Engineer** | Client-facing, fast delivery, voice AI | Someone who deploys AI solutions and owns outcomes |
+
+**Fresher scoring bias:** roles requiring 2+ years hard-reject unless the JD explicitly accepts strong project/portfolio experience in lieu of years. Reward funded early/growth-stage startups in target cities; deprioritize mass-recruiting service companies (TCS/Wipro/Infosys/etc.) unless the user opts in. See `config/profile.yml` and `modes/_profile.md` for the user's exact filters, framing, and proof points per archetype.
 
 After detecting archetype, read `modes/_profile.md` for the user's specific framing and proof points for that archetype.
 
@@ -92,18 +94,20 @@ After detecting archetype, read `modes/_profile.md` for the user's specific fram
 
 1. Invent experience or metrics
 2. Modify cv.md or portfolio files
-3. Submit applications on behalf of the candidate
+3. Submit applications on behalf of the candidate (human gate — see AGENTS.md)
 4. Share phone number in generated messages
 5. Recommend comp below market rate
-6. Generate a PDF without reading the JD first
-7. Use corporate-speak
-8. Ignore the tracker (every evaluated offer gets registered)
+6. **Generate, render, or "tailor" a resume.** The resume is FIXED: attach `Resume_Makilesh.pdf` unmodified. NEVER run generate-pdf/generate-latex/cv-sync-check for a job.
+7. **Rewrite the cover letter / referral / follow-up.** Use `templates/cover-letter.md`, `templates/referral-message.md`, `templates/followup-message.md` verbatim (only the allowed substitutions).
+8. Use corporate-speak
+9. Ignore the tracker (every evaluated offer gets registered)
+10. Send email by any route other than Gmail MCP; automate LinkedIn with Playwright
 
 ### ALWAYS
 
-0. **Cover letter:** If the form allows it, ALWAYS include one. Same visual design as CV. JD quotes mapped to proof points. 1 page max.
+0. **Cover letter:** If the form allows it, ALWAYS include one — paste `templates/cover-letter.md` VERBATIM (only the final-line job title, optionally company name after "Hi Team"). Never redesign or map to proof points.
 1. Read cv.md, _profile.md, and article-digest.md (if exists) before evaluating
-1b. **First evaluation of each session:** Run `node cv-sync-check.mjs`. If warnings, notify user.
+1b. **Resume is fixed** — do NOT run `cv-sync-check.mjs`; every application attaches `Resume_Makilesh.pdf` as-is.
 2. Detect the role archetype and adapt framing per _profile.md
 3. Cite exact lines from CV when matching
 4. Use WebSearch for comp and company data
