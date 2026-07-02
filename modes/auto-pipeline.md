@@ -1,5 +1,9 @@
 # Mode: auto-pipeline — Full Automatic Pipeline
 
+> **Makilesh rules:** NO resume generation — attach `Resume_Makilesh.pdf` unmodified.
+> Cover letter = `templates/cover-letter.md` verbatim. Apply threshold 3.5/5.
+> Human gate before any submit/send. Email = Gmail MCP only.
+
 When the user pastes a JD (text or URL) without an explicit sub-command, execute the ENTIRE pipeline in sequence:
 
 ## Step 0 — Extract JD
@@ -25,20 +29,27 @@ Execute the same as the `oferta` mode (read `modes/oferta.md` for all A-F blocks
 Save the full evaluation in `reports/{###}-{company-slug}-{YYYY-MM-DD}.md` (see format in `modes/oferta.md`).
 Include Block G in the saved report. Add **URL:** {url} and **Legitimacy:** {tier} to the report header.
 
-## Step 3 — Generate PDF
+## Step 3 — Resume (FIXED — no generation)
 
-Read `config/profile.yml`. Check `cv.output_format`:
+Do NOT generate a PDF. The resume is `Resume_Makilesh.pdf`, attached unmodified.
+In the report/tracker, treat PDF as ✅ (the fixed resume is always available).
+Skip `pdf`/`latex` modes and `cv-sync-check.mjs` entirely.
 
-- If `"latex"`, execute the full pipeline from `modes/latex.md`
-- Otherwise (default), execute the full pipeline from `modes/pdf.md`
+## Step 4 — Draft Application Answers (only if score >= 3.5)
 
-## Step 4 — Draft Application Answers (only if score >= 4.5)
+If the final score is >= 3.5 (fresher threshold), draft form responses:
 
-If the final score is >= 4.5, generate a draft of responses for the application form:
-
-1. **Extract form questions**: Use Playwright to navigate to the form and take a snapshot. If they cannot be extracted, use the generic questions.
-2. **Generate responses** following the tone (see below).
-3. **Save in the report** as section `## H) Draft Application Answers`.
+1. **Extract form questions**: Use Playwright (respect headed/headless §8) to
+   navigate the form and snapshot it. Fall back to the generic questions.
+2. **Answer via `qa-bank.mjs`** (§6): for each question run
+   `node qa-bank.mjs answer "<q>" --company <c> --role <r>`.
+   - `matched` → use the stored answer.
+   - `adapted` → use the adapted answer (already appended to the bank).
+   - `needs-input` → PAUSE and ask Makilesh; store the answer, then continue.
+3. **Cover letter**: if the form has one, paste `templates/cover-letter.md`
+   verbatim (only the final-line role, optionally company after "Hi Team").
+4. **Save** the answers in the report as `## H) Draft Application Answers`.
+5. Never submit — the human gate (see `modes/apply.md`) owns submission.
 
 ### Generic questions (use if they cannot be extracted from the form)
 
@@ -59,12 +70,15 @@ If the final score is >= 4.5, generate a draft of responses for the application 
 - **Direct, without fluff**: 2-4 sentences per response. No "I'm passionate about..." or "I would love the opportunity to..."
 - **The hook is the proof, not the statement**: Instead of "I'm great at X", say "I built X that does Y"
 
-**Framework per question:**
-- **Why this role?** → "Your [specific thing] maps directly to [specific thing I built]."
-- **Why this company?** → Mention something specific about the company. "I've been using [product] for [time/purpose]."
-- **Relevant experience?** → A quantified proof point. "Built [X] that [metric]. Sold the company in 2025."
+**Framework per question (fresher framing — pull real proof points from cv.md / _profile.md):**
+- **Why this role?** → "Your [specific thing] maps directly to [specific thing I built]" (e.g. Agentic RAG, Voice Agent).
+- **Why this company?** → Something specific about the company/product.
+- **Relevant experience?** → A quantified proof point from a real project or the Shamla Tech internship (e.g. "Built a 7-agent LangGraph RAG with ~200ms retrieval").
 - **Good fit?** → "I sit at the intersection of [A] and [B], which is exactly where this role lives."
 - **How did you hear?** → Honest: "Found through [portal/scan], evaluated against my criteria, and it scored highest."
+
+> Prefer the `qa-bank` answers over ad-hoc generation. This tone guidance only
+> applies when the router must adapt a near-match or draft a brand-new answer.
 
 **Language**: Always in the language of the JD (EN default). Apply `/tech-translate`.
 
