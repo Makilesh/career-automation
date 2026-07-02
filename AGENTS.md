@@ -1,12 +1,33 @@
-# Career-Ops -- AI Job Search Pipeline
+# Career-Ops -- Makilesh's AI Job-Application System
 
 ## Origin
 
-This system was built and used by [santifer](https://santifer.io) to evaluate 740+ job offers, generate 100+ tailored CVs, and land a Head of Applied AI role. The archetypes, scoring logic, negotiation scripts, and proof point structure all reflect his specific career search in AI/automation roles.
+This is **Makilesh M's** personal fork of career-ops, customized to land an AI/ML fresher role at a good startup in his target cities (Bengaluru first) with near-zero manual effort per application. Owner identity, archetypes, scoring, templates, and the LLM/apply/email automation all reflect Makilesh's search.
 
-The portfolio that goes with this system is also open source: [cv-santiago](https://github.com/santifer/cv-santiago).
+Built on the open-source **career-ops** by [santifer](https://santifer.io) (MIT). Upstream credit retained per the license; see README.
 
-**It will work out of the box, but it's designed to be made yours.** If the archetypes don't match your career, the modes are in the wrong language, or the scoring doesn't fit your priorities -- just ask. You (AI Agent) can edit the user's files. The user says "change the archetypes to data engineering roles" and you do it. That's the whole point.
+**Everything here is customizable by the AI agent.** If the archetypes, filters, or scoring don't fit, just ask and the agent edits the files directly.
+
+---
+
+## Makilesh — Hard Rules (READ FIRST, NON-NEGOTIABLE)
+
+These override any generic behavior below.
+
+### Owner
+Makilesh M — AI/ML Engineer (fresher, B.E. CSE, Sri Krishna College of Engineering and Technology, graduating May 2026, CGPA 8.0). Bengaluru, India. makilesh24225@gmail.com · +91 9894419452 · [github.com/Makilesh](https://github.com/Makilesh) · [makilesh.github.io](https://makilesh.github.io) · linkedin.com/in/makilesh.
+
+### Fixed Documents — NEVER regenerate, rewrite, paraphrase, or "tailor"
+1. **Resume:** ALWAYS attach `Resume_Makilesh.pdf` (repo root) **unmodified** to every application. NEVER run `generate-pdf.mjs` / `generate-latex.mjs` / `cv-sync-check.mjs` or the `pdf`/`latex` modes to produce a resume for a job. Those files stay in the repo but are bypassed. `cv.md` exists only as evaluation-reasoning context — never rendered or sent.
+2. **Cover letter / intro message:** use `templates/cover-letter.md` **verbatim**. Only permitted edits: the job title in the final line, optionally the company name after "Hi Team". Never expand or reword.
+3. **Referral outreach:** use `templates/referral-message.md` verbatim (only `{{name}}`/`{{company}}`/`{{role}}`).
+4. **Follow-up email:** use `templates/followup-message.md` verbatim (only `{{role}}`/`{{company}}`).
+
+### Automation rules
+- **Email transport = Gmail MCP only** (`makilesh24225@gmail.com`). If Gmail MCP is not configured/errors, STOP and report — NEVER fall back to browser-automated Gmail. See §"Email Applications".
+- **LinkedIn is never automated with Playwright** (ban risk). Referral mode only *prepares* messages; Makilesh sends them manually.
+- **Human gate always on:** fill forms / draft answers / queue emails, but STOP before Submit/Send. Makilesh approves (batch approval supported) before anything leaves.
+- **LLM cost target ₹0:** deterministic code first → local Qwen (Ollama) → Gemini free tier (rotated) only for high-value reasoning. See §"LLM Strategy".
 
 ## Data Contract (CRITICAL)
 
@@ -146,7 +167,7 @@ Once all files exist, confirm:
 >
 > Everything is customizable — just ask me to change anything.
 >
-> Tip: Having a personal portfolio dramatically improves your job search. If you don't have one yet, the author's portfolio is also open source: github.com/santifer/cv-santiago — feel free to fork it and make it yours."
+> Tip: Makilesh's portfolio is live at makilesh.github.io — keep it linked in every application (the fixed cover letter already does)."
 
 Then suggest automation:
 > "Want me to scan for new offers automatically? I can set up a recurring scan every few days so you don't miss anything. Just say 'scan every 3 days' and I'll configure it."
@@ -200,18 +221,21 @@ Default modes are in `modes/` (English). Additional language-specific modes are 
 
 | If the user... | Mode |
 |----------------|------|
-| Pastes JD or URL | auto-pipeline (evaluate + report + PDF + tracker) |
+| Pastes JD or URL | auto-pipeline (evaluate + report + tracker; NO resume gen — attach `Resume_Makilesh.pdf`) |
 | Asks to evaluate offer | `oferta` |
 | Asks to compare offers | `ofertas` |
-| Wants LinkedIn outreach | `contacto` |
+| Scans job boards & aggregators | `scan-boards` (config `portals-boards.yml`) |
+| Scans direct startup career pages | `scan-startups` (config `startups.yml`) |
+| Wants a full run (boards + startups → dedup → evaluate → apply queue) | `hunt` |
+| Wants referral outreach prepared | `referral` (repurposes `contacto`; fixed template) |
 | Asks for company research | `deep` |
 | Preps for interview at specific company | `interview-prep` |
-| Wants to generate CV/PDF | `pdf` |
+| Wants to generate CV/PDF | ⛔ DISABLED — resume is fixed (`Resume_Makilesh.pdf`); explain, don't generate |
 | Evaluates a course/cert | `training` |
 | Evaluates portfolio project | `project` |
 | Asks about application status | `tracker` |
-| Fills out application form | `apply` |
-| Searches for new offers | `scan` |
+| Fills out application form | `apply` (profile + `qa-bank.mjs`, fixed resume + cover letter, human gate) |
+| Searches for new offers | `scan-boards` / `scan-startups` (legacy `scan` still works) |
 | Processes pending URLs | `pipeline` |
 | Batch processes offers | `batch` |
 | Asks about rejection patterns or wants to improve targeting | `patterns` |
@@ -275,9 +299,44 @@ When spawning headless workers for batch processing, use the appropriate command
 | OpenCode | `opencode run "prompt"` |
 | Qwen | `qwen -p "prompt"` |
 
+## LLM Strategy (cost target ₹0)
+
+Router: `llm-router.mjs`. Two backends — **local Ollama `qwen2.5:14b`** (q4_K_M; falls back to `qwen2.5:7b` on OOM) and **Gemini free tier** (rotated). Usage tracked persistently in `data/llm-usage.json` (per-model RPM/RPD/TPM windows).
+
+**Routing gate (checked on every call, in order):**
+1. **Deterministic → plain code, NO LLM.** Info extraction, HTML parsing, keyword extraction, form-field detection, dedup, rule-based scoring, job/experience/location filtering, resume parsing. Use regex / parsers / Playwright selectors / string matching.
+2. **Cheap reasoning → local Qwen.** JD cleanup, relevance prefilter, semantic similarity, qa-bank retrieval, embeddings, classification, first drafts, lightweight rewrites, test-mode runs.
+3. **High-value reasoning → Gemini** (only when it materially improves the final application): adapting stored answers to company-specific questions, evaluating high-fit jobs pre-submission, deep company research, generating subjective answers with no qa-bank match, final quality review before submit.
+
+**Gemini rotation & limits** (encoded in router; the ~150 combined pro RPD is the scarcest resource — spend on quality):
+
+| Model | RPM | RPD | TPM | Role |
+|---|---|---|---|---|
+| gemini-3.5-flash | 10 | 1,500 | 250k | Default: evaluations & agentic steps |
+| gemini-3.1-flash-lite | 15 | 1,000 | 250k | Bulk classification / quick scoring |
+| gemini-2.5-flash | 10 | 1,500 | 250k | Overflow twin of 3.5-flash |
+| gemini-3.1-pro-preview | 5 | 100 | 250k | Complex reasoning, final subjective answers |
+| gemini-2.5-pro | 5 | 50 | 150k | Overflow deep reasoning |
+
+Allocation: local Qwen for discardable → flash-lite triage → 3.5-flash (overflow 2.5-flash) evals & form answers → pro ONLY for shortlisted final answers + deep research. On 429/limit: rotate within tier → exponential backoff → if all Gemini exhausted, queue and/or degrade to Qwen with a warning. Batch prompts to stay under TPM. Every routing decision is logged in `llm-usage.json` for audit.
+
+## Email Applications (Gmail MCP only)
+
+Gmail MCP connected to `makilesh24225@gmail.com` is the PRIMARY and ONLY email transport. When a listing/startup has an HR/hiring email:
+1. Body = `templates/cover-letter.md` verbatim. Subject = `Application — {role} — Makilesh M (AI/ML Fresher)`.
+2. Attach `Resume_Makilesh.pdf`.
+3. Dedup: check tracker + `data/email-log.json` — NEVER send twice for the same company+role.
+4. Daily cap (default 20, configurable in `config/profile.yml` → `email.daily_cap`); follow-ups count toward it.
+5. Send via Gmail MCP → log `{message_id, timestamp, company, role, type}` in `data/email-log.json` + tracker.
+6. If Gmail MCP is unconfigured or errors → **STOP and report. NEVER browser-automate Gmail.**
+
+## Apply Flow (fast human gate)
+
+`scan-boards`/`scan-startups`/`hunt` → dedup → evaluate (fresher-weighted, threshold default 3.5/5) → apply queue → Playwright fills forms from `config/profile.yml` + `qa-bank.mjs`, attaches fixed resume, inserts fixed cover letter → **compact review card per application** (company, role, answers used, NEW questions) with batch approval ("approve all" / "approve 1,3,5") → submit approved → tracker → `Applied` with timestamp + URL. Email applications follow §Email with the same one-click approval. The human gate is what makes the qa-bank learning loop safe — never bypass it.
+
 ## Stack and Conventions
 
-- Node.js (mjs modules), Playwright (PDF + scraping), YAML (config), HTML/CSS (template), Markdown (data), Canva MCP (optional visual CV)
+- Node.js (mjs modules), Playwright (scraping + form fill), YAML (config), Markdown (data). Ollama (local LLM) + Gemini API (rotated) + Gmail MCP (email).
 - Scripts in `.mjs`, configuration in YAML
 - Output in `output/` (gitignored), Reports in `reports/`
 - JDs in `jds/` (referenced as `local:jds/{file}` in pipeline.md)
