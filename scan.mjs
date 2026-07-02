@@ -20,10 +20,14 @@
  * Zero Claude API tokens — pure HTTP + JSON.
  *
  * Usage:
- *   node scan.mjs                  # scan all enabled companies
- *   node scan.mjs --dry-run        # preview without writing files
- *   node scan.mjs --company Cohere # scan a single company
- *   node scan.mjs --verify         # Playwright-check each new URL; drop expired postings
+ *   node scan.mjs                        # scan all enabled companies (portals.yml)
+ *   node scan.mjs --config portals-boards.yml   # scan job boards config
+ *   node scan.mjs --config startups.yml         # scan startup watchlist config
+ *   node scan.mjs --posted same-day      # recency: 1h|same-day|24h|3d|7d (default 24h)
+ *   node scan.mjs --dry-run              # preview without writing files
+ *   node scan.mjs --company Cohere       # scan a single company
+ *   node scan.mjs --verify               # Playwright-check each new URL; drop expired
+ *   node scan.mjs --verify --headed      # verify with a visible browser (§8)
  */
 
 import { readFileSync, writeFileSync, appendFileSync, existsSync, mkdirSync, readdirSync } from 'fs';
@@ -32,6 +36,7 @@ import path from 'path';
 import yaml from 'js-yaml';
 
 import { makeHttpCtx } from './providers/_http.mjs';
+import { resolveHeadless } from './browser-config.mjs';
 
 const parseYaml = yaml.load;
 
@@ -136,6 +141,36 @@ function buildLocationFilter(locationFilter) {
     if (block.length > 0 && block.some(k => lower.includes(k))) return false;
     if (allow.length === 0) return true;
     return allow.some(k => lower.includes(k));
+  };
+}
+
+// ── Recency filter (--posted) ───────────────────────────────────────
+// Windows: 1h | same-day | 24h | 3d | 7d (default 24h). "Never surface
+// listings older than the window." Offers with NO posted date pass (we
+// can't prove they're stale) but the count is logged so undated sources
+// (e.g. Lever without createdAt) don't get silently dropped.
+
+function windowStartMs(window) {
+  const now = Date.now();
+  switch ((window || '24h').toLowerCase()) {
+    case '1h':       return now - 1 * 60 * 60 * 1000;
+    case 'same-day': { const d = new Date(); d.setHours(0, 0, 0, 0); return d.getTime(); }
+    case '24h':      return now - 24 * 60 * 60 * 1000;
+    case '3d':       return now - 3 * 24 * 60 * 60 * 1000;
+    case '7d':       return now - 7 * 24 * 60 * 60 * 1000;
+    default:
+      console.error(`⚠️  Unknown --posted window "${window}", defaulting to 24h`);
+      return now - 24 * 60 * 60 * 1000;
+  }
+}
+
+function buildRecencyFilter(window) {
+  const cutoff = windowStartMs(window);
+  return (posted) => {
+    if (!posted) return true; // undated → keep (can't prove stale)
+    const t = Date.parse(posted);
+    if (Number.isNaN(t)) return true; // unparseable → keep
+    return t >= cutoff;
   };
 }
 
@@ -258,7 +293,7 @@ async function parallelFetch(tasks, limit) {
 
 // ── Main ────────────────────────────────────────────────────────────
 
-async function verifyOffers(offers) {
+async function verifyOffers(offers, { headless = true } = {}) {
   // Dynamic imports keep the default zero-token path free of Playwright startup
   let chromium;
   let checkUrlLiveness;
@@ -274,7 +309,7 @@ async function verifyOffers(offers) {
 
   let browser;
   try {
-    browser = await chromium.launch({ headless: true });
+    browser = await chromium.launch({ headless });
   } catch (err) {
     throw new Error(
       `--verify could not launch Chromium (run "npx playwright install chromium" or re-run without --verify): ${err.message}`,
@@ -347,6 +382,15 @@ async function main() {
   const companyFlag = args.indexOf('--company');
   const filterCompany = companyFlag !== -1 ? args[companyFlag + 1]?.toLowerCase() : null;
 
+  // --config <file>: which YAML to scan (portals.yml | portals-boards.yml | startups.yml)
+  const configFlag = args.indexOf('--config');
+  const portalsPath = configFlag !== -1 && args[configFlag + 1] ? args[configFlag + 1] : PORTALS_PATH;
+
+  // --posted <window>: recency filter. 1h | same-day | 24h | 3d | 7d (default 24h)
+  const postedFlag = args.indexOf('--posted');
+  const postedWindow = postedFlag !== -1 && args[postedFlag + 1] ? args[postedFlag + 1] : '24h';
+  const recencyFilter = buildRecencyFilter(postedWindow);
+
   // 1. Load providers
   const providers = await loadProviders(PROVIDERS_DIR);
   if (providers.size === 0) {
@@ -354,13 +398,13 @@ async function main() {
     process.exit(1);
   }
 
-  // 2. Read portals.yml
-  if (!existsSync(PORTALS_PATH)) {
-    console.error('Error: portals.yml not found. Run onboarding first.');
+  // 2. Read config YAML
+  if (!existsSync(portalsPath)) {
+    console.error(`Error: ${portalsPath} not found. Run onboarding first (or check --config).`);
     process.exit(1);
   }
 
-  const config = parseYaml(readFileSync(PORTALS_PATH, 'utf-8'));
+  const config = parseYaml(readFileSync(portalsPath, 'utf-8'));
   const companies = config.tracked_companies || [];
   const titleFilter = buildTitleFilter(config.title_filter);
   const locationFilter = buildLocationFilter(config.location_filter);
@@ -394,6 +438,7 @@ async function main() {
   let totalFound = 0;
   let totalFilteredTitle = 0;
   let totalFilteredLocation = 0;
+  let totalFilteredRecency = 0;
   let totalDupes = 0;
   const newOffers = [];
   const errors = [...resolveErrors];
@@ -415,6 +460,10 @@ async function main() {
         }
         if (!locationFilter(job.location)) {
           totalFilteredLocation++;
+          continue;
+        }
+        if (!recencyFilter(job.posted)) {
+          totalFilteredRecency++;
           continue;
         }
         if (seenUrls.has(job.url)) {
@@ -446,8 +495,9 @@ async function main() {
   let droppedOffers = [];
   let invalidOffers = [];
   if (verify && newOffers.length > 0) {
-    console.log(`\nVerifying liveness of ${newOffers.length} new offer(s) with Playwright (sequential)...`);
-    const result = await verifyOffers(newOffers);
+    const headless = resolveHeadless(args, { mode: 'scan' });
+    console.log(`\nVerifying liveness of ${newOffers.length} new offer(s) with Playwright (${headless ? 'headless' : 'headed'}, sequential)...`);
+    const result = await verifyOffers(newOffers, { headless });
     verifiedOffers = result.verified;
     expiredOffers = result.expired;
     droppedOffers = result.dropped;
@@ -491,6 +541,7 @@ async function main() {
   console.log(`Total jobs found:      ${totalFound}`);
   console.log(`Filtered by title:     ${totalFilteredTitle} removed`);
   console.log(`Filtered by location:  ${totalFilteredLocation} removed`);
+  console.log(`Filtered by recency:   ${totalFilteredRecency} removed (--posted ${postedWindow})`);
   console.log(`Duplicates:            ${totalDupes} skipped`);
   if (verify) {
     console.log(`Expired (verified):    ${expiredOffers.length} dropped`);
