@@ -247,6 +247,22 @@ async function check() {
 // ── APPLY ───────────────────────────────────────────────────────
 
 async function apply() {
+  // ── Makilesh fork guard ─────────────────────────────────────────────
+  // This fork customizes SYSTEM-layer files (AGENTS.md, modes/apply.md,
+  // modes/followup.md, modes/email.md, templates/*, scripts). Pulling from
+  // upstream santifer/career-ops would overwrite those customizations.
+  // A backup branch is still created, but require an explicit opt-in.
+  if (!process.argv.includes('--force') && process.env.CAREER_OPS_ALLOW_UPSTREAM_UPDATE !== '1') {
+    console.error(
+      'BLOCKED: this fork has customized system-layer files that an upstream\n' +
+      'update would overwrite (AGENTS.md, modes/*, templates/*, scripts).\n' +
+      'If you really want to pull upstream career-ops changes, re-run with\n' +
+      '  node update-system.mjs apply --force\n' +
+      'and review the diff afterwards (a backup branch is created).'
+    );
+    process.exit(1);
+  }
+
   const local = localVersion();
   const initialStatusPaths = new Set(gitStatusEntries().map(entry => entry.path));
 

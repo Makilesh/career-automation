@@ -38,14 +38,23 @@ email an application/follow-up/referral.
    - Attachment: `Resume_Makilesh.pdf`.
 5. **Review card + batch approval** (per email): To / Subject / template name /
    attachment. `"approve all" / "approve 1,3"`. Nothing sends without approval.
-6. **Send via Gmail MCP.** Capture the returned message ID.
+6. **Send/draft via Gmail MCP:**
+   - If the connected Gmail MCP has a **send** tool → send approved emails
+     directly and capture the returned message ID.
+   - If it only exposes **`create_draft`** (current setup) → create one draft per
+     approved email and tell Makilesh: *"N drafts are in your Gmail Drafts —
+     attach `Resume_Makilesh.pdf` if the draft tool couldn't, review, and hit
+     Send."* The draft ID is logged; mark the log entry `"status": "drafted"`
+     and flip it to `"sent"` when Makilesh confirms.
 7. **Log** in `data/email-log.json` (append to `sent`):
    ```json
-   { "message_id": "<id>", "timestamp": "<ISO>", "company": "<c>",
-     "role": "<r>", "to": "<email>", "type": "application|followup|referral" }
+   { "message_id": "<id or draft id>", "timestamp": "<ISO>", "company": "<c>",
+     "role": "<r>", "to": "<email>", "type": "application|followup|referral",
+     "status": "sent|drafted" }
    ```
-   Also update `data/applications.md` (status/notes) and, for follow-ups,
-   `data/follow-ups.md`.
+   Dedup treats `drafted` the same as `sent` (never create a second draft for the
+   same company+role). Also update `data/applications.md` (status/notes) and, for
+   follow-ups, `data/follow-ups.md`.
 
 ## Errors
 

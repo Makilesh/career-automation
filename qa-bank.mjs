@@ -89,6 +89,25 @@ export function isSubjective(question) {
   return SUBJECTIVE_HINTS.some((h) => n.includes(h));
 }
 
+// ── Embedding cache (avoids re-embedding the whole bank per question) ─
+const EMB_CACHE_PATH = 'data/qa-embeddings.json';
+
+function loadEmbCache() {
+  try { return JSON.parse(readFileSync(EMB_CACHE_PATH, 'utf-8')); } catch { return {}; }
+}
+
+function saveEmbCache(cache) {
+  try { writeFileSync(EMB_CACHE_PATH, JSON.stringify(cache), 'utf-8'); } catch { /* non-fatal */ }
+}
+
+async function embedCached(embed, text, cache) {
+  const key = normalize(text);
+  if (cache[key]) return cache[key];
+  const v = await embed(text);
+  cache[key] = v;
+  return v;
+}
+
 // ── Matching (local embeddings preferred, deterministic fallback) ────
 export async function matchQuestion(question, bank = loadBank()) {
   const entries = bank.entries;
@@ -98,8 +117,10 @@ export async function matchQuestion(question, bank = loadBank()) {
   let scored = null;
   try {
     const { embed } = await import('./llm-router.mjs');
-    const qv = await embed(question);
-    const vecs = await Promise.all(entries.map((e) => embed(e.q)));
+    const cache = loadEmbCache();
+    const qv = await embedCached(embed, question, cache);
+    const vecs = await Promise.all(entries.map((e) => embedCached(embed, e.q, cache)));
+    saveEmbCache(cache);
     scored = entries.map((e, i) => ({ entry: e, score: cosine(qv, vecs[i]) }));
     scored.sort((a, b) => b.score - a.score);
     const best = scored[0];

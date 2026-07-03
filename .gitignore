@@ -13,6 +13,7 @@ dist/
 data/qa-bank.yml
 data/email-log.json
 data/llm-usage.json
+data/qa-embeddings.json
 
 # Generated output (kept out of git)
 output/

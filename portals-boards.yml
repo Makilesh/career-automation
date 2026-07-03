@@ -188,5 +188,5 @@ score_boosts:
 
 pipeline:
   min_score_for_pipeline: 3.5
-  hard_reject_experience_years: 3+     # fresher: reject 2+ yr unless portfolio accepted
+  hard_reject_experience_years: 3      # reject roles requiring 3+ yrs unless portfolio accepted
   accept_portfolio_in_lieu: true
