@@ -1,85 +1,122 @@
-# qa-bank.yml — Makilesh's self-learning application answer bank (§6).
-# GITIGNORED (contains personal answers). Managed by qa-bank.mjs + apply mode.
-#
-# Each entry:
-#   q:     the (canonical) question
-#   a:     the answer. May contain {{company}} / {{role}} placeholders.
-#   tags:  [category ...]  (e.g. personal, education, subjective)
-#   added: YYYY-MM-DD
-#
-# Matching is done LOCALLY (Ollama embeddings, else deterministic string
-# similarity) — NEVER Gemini. Adaptation of near-matches uses the LLM router.
-# Subjective/personal questions with NO match (salary, motivation, availability,
-# visa) PAUSE and ask Makilesh; the answer is then stored here with a date.
-
 version: 1
 entries:
-  - q: "What is your full name?"
-    a: "Makilesh M"
-    tags: [personal, name]
-    added: "2026-07-02"
-  - q: "What is your email address?"
-    a: "makilesh24225@gmail.com"
-    tags: [personal, contact]
-    added: "2026-07-02"
-  - q: "What is your phone number?"
-    a: "+91 9894419452"
-    tags: [personal, contact]
-    added: "2026-07-02"
-  - q: "What is your current location?"
-    a: "Bengaluru, Karnataka, India"
-    tags: [personal, location]
-    added: "2026-07-02"
-  - q: "What is your notice period?"
-    a: "Immediate (available to join right away)."
-    tags: [personal, availability]
-    added: "2026-07-02"
-  - q: "What is your current CTC / current salary?"
-    a: "N/A — I'm a fresher (final-year student), so I don't have a current CTC."
-    tags: [personal, compensation]
-    added: "2026-07-02"
-  - q: "What is your expected CTC / expected salary?"
-    a: "Around ₹8–12 LPA, negotiable based on the role and team."
-    tags: [personal, compensation, subjective]
-    added: "2026-07-02"
-  - q: "What is your highest degree / education?"
-    a: "B.E. in Computer Science Engineering, Sri Krishna College of Engineering and Technology (CGPA 8.0), graduating May 2026."
-    tags: [education]
-    added: "2026-07-02"
-  - q: "Which college / university did you attend?"
-    a: "Sri Krishna College of Engineering and Technology, Coimbatore."
-    tags: [education]
-    added: "2026-07-02"
-  - q: "What is your CGPA / GPA?"
-    a: "8.0 (CGPA)."
-    tags: [education]
-    added: "2026-07-02"
-  - q: "What is your graduation year / when do you graduate?"
-    a: "May 2026 (final-year B.E. CSE student)."
-    tags: [education, availability]
-    added: "2026-07-02"
-  - q: "Do you require work authorization / visa sponsorship?"
-    a: "I'm an Indian citizen — no sponsorship needed for roles in India. I would need sponsorship for US/EU/UK roles."
-    tags: [personal, work-authorization]
-    added: "2026-07-02"
-  - q: "What is your LinkedIn profile?"
-    a: "https://in.linkedin.com/in/makilesh"
-    tags: [personal, links]
-    added: "2026-07-02"
-  - q: "What is your GitHub profile?"
-    a: "https://github.com/Makilesh"
-    tags: [personal, links]
-    added: "2026-07-02"
-  - q: "What is your portfolio / website?"
-    a: "https://makilesh.github.io/"
-    tags: [personal, links]
-    added: "2026-07-02"
-  - q: "Are you willing to work from office / relocate?"
-    a: "Yes — I prefer onsite or hybrid roles. Priority: Bangalore, then Hyderabad, then Chennai (within ~100 km is fine). I'm happy to relocate for the right role."
-    tags: [personal, location, availability]
-    added: "2026-07-02"
-
-  # ── Filled during setup (§6/§12). Leave until Makilesh answers once. ──
-  # - q: "What is your expected CTC?"            # ask once, then store
-  # - q: "Which cities would you relocate to?"   # ask once, then store
-  # - q: "What is your earliest joining date?"   # ask once, then store
+  - q: What is your full name?
+    a: Makilesh M
+    tags:
+      - personal
+      - name
+    added: '2026-07-02'
+  - q: What is your email address?
+    a: makilesh24225@gmail.com
+    tags:
+      - personal
+      - contact
+    added: '2026-07-02'
+  - q: What is your phone number?
+    a: +91 9894419452
+    tags:
+      - personal
+      - contact
+    added: '2026-07-02'
+  - q: What is your current location?
+    a: Bengaluru, Karnataka, India
+    tags:
+      - personal
+      - location
+    added: '2026-07-02'
+  - q: What is your notice period?
+    a: Immediate (available to join right away).
+    tags:
+      - personal
+      - availability
+    added: '2026-07-02'
+  - q: What is your current CTC / current salary?
+    a: N/A — I'm a fresher (final-year student), so I don't have a current CTC.
+    tags:
+      - personal
+      - compensation
+    added: '2026-07-02'
+  - q: What is your expected CTC / expected salary?
+    a: Around ₹8–12 LPA, negotiable based on the role and team.
+    tags:
+      - personal
+      - compensation
+      - subjective
+    added: '2026-07-02'
+  - q: What is your highest degree / education?
+    a: >-
+      B.E. in Computer Science Engineering, Sri Krishna College of Engineering and Technology (CGPA
+      8.0), graduating May 2026.
+    tags:
+      - education
+    added: '2026-07-02'
+  - q: Which college / university did you attend?
+    a: Sri Krishna College of Engineering and Technology, Coimbatore.
+    tags:
+      - education
+    added: '2026-07-02'
+  - q: What is your CGPA / GPA?
+    a: 8.0 (CGPA).
+    tags:
+      - education
+    added: '2026-07-02'
+  - q: What is your graduation year / when do you graduate?
+    a: May 2026 (final-year B.E. CSE student).
+    tags:
+      - education
+      - availability
+    added: '2026-07-02'
+  - q: Do you require work authorization / visa sponsorship?
+    a: >-
+      I'm an Indian citizen — no sponsorship needed for roles in India. I would need sponsorship for
+      US/EU/UK roles.
+    tags:
+      - personal
+      - work-authorization
+    added: '2026-07-02'
+  - q: What is your LinkedIn profile?
+    a: https://in.linkedin.com/in/makilesh
+    tags:
+      - personal
+      - links
+    added: '2026-07-02'
+  - q: What is your GitHub profile?
+    a: https://github.com/Makilesh
+    tags:
+      - personal
+      - links
+    added: '2026-07-02'
+  - q: What is your portfolio / website?
+    a: https://makilesh.github.io/
+    tags:
+      - personal
+      - links
+    added: '2026-07-02'
+  - q: Are you willing to work from office / relocate?
+    a: >-
+      Yes — I prefer onsite or hybrid roles. Priority: Bangalore, then Hyderabad, then Chennai
+      (within ~100 km is fine). I'm happy to relocate for the right role.
+    tags:
+      - personal
+      - location
+      - availability
+    added: '2026-07-02'
+  - q: What is your annual gross salary expectation?
+    a: >-
+      My expected annual gross salary is around ₹8–12 LPA, which is negotiable based on the specific
+      role and team. As a fresher graduating in May 2026, I am open to discussing this further.
+    tags:
+      - adapted
+    added: '2026-07-03'
+  - q: What is your current annual gross salary?
+    a: >-
+      I do not have a current annual gross salary as I am a fresher and currently a final-year
+      student graduating in May 2026.
+    tags:
+      - adapted
+    added: '2026-07-03'
+  - q: LinkedIn profile URL
+    a: https://in.linkedin.com/in/makilesh
+    tags:
+      - adapted
+    added: '2026-07-03'
