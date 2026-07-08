@@ -11,3 +11,5 @@
 - [x] #005 | https://apply.workable.com/quantumloopai/j/B7F8DA3F6C/ | QuantumLoopAI | AI/ML & Prompt Engineer LLM, RAG & Voice Agent | 4.0/5 | PDF ✅
 - [x] #006 | https://www.workatastartup.com/jobs/90065 | Peakflo | Machine Learning (ML) Engineer Intern (Paid, India/Remote) | 4.6/5 | PDF ✅
 - [x] #007 | https://www.workatastartup.com/jobs/64551 | SuperKalam | AI/ML Research Internship | 4.3/5 | PDF ✅
+- [x] #008 | https://corover.ai/company/careers/gen-ai-developer | CoRover.ai | Gen AI Developer/AI ML Engineer | 4.5/5 | PDF ✅
+- [x] #009 | https://haptik.freshteam.com/jobs/HVivFopqkiC1/voice-ai-engineer-hybrid | Haptik | Voice AI Engineer (Hybrid) | 3.6/5 | PDF ✅
