@@ -120,3 +120,36 @@ entries:
     tags:
       - adapted
     added: '2026-07-03'
+  - q: Do you have experience creating Voice Chat Applications?
+    a: >-
+      Yes. I built a production-grade full-duplex voice agent (STT+LLM+TTS) with 200-500ms
+      end-to-end latency and under 150ms barge-in detection using Whisper, Kokoro-82M TTS, and
+      Silero VAD (github.com/Makilesh/voice_engine_MVP). I also deployed an AI Voice Calling Agent
+      with Twilio + Pinecone at Shamla Tech Solutions, handling persistent conversation memory and
+      automated outbound workflows, which reduced manual call handling by 80%.
+    tags:
+      - voice
+      - experience
+      - portfolio
+    added: '2026-07-04'
+  - q: When is the earliest you could start?
+    a: Immediate - no notice period, already graduated (May 2026)
+    tags:
+      - availability
+      - start-date
+    added: '2026-07-04'
+  - q: Stipend in the last internship?
+    a: INR 15,000 per month (Shamla Tech Solutions, AI Developer Intern, Sep 2025 - Mar 2026)
+    tags:
+      - stipend
+      - internship
+      - compensation
+    added: '2026-07-04'
+  - q: Do you have any commitments during the internship?
+    a: >-
+      No commitments. Graduated May 2026 (B.E. CSE), no classes/exams/NOC issues, fully available
+      full-time.
+    tags:
+      - availability
+      - commitments
+    added: '2026-07-04'
