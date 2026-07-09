@@ -1,0 +1,61 @@
+# discovered-companies.yml — AUTO-MANAGED by the `discover` mode (§discover).
+#
+# The discover mode finds companies hiring AI/ML roles in your target locations
+# (via ATS-wide searches + aggregators), verifies each one resolves, and appends
+# it here with status: pending-review. NOTHING here is applied to until YOU
+# approve it (Discover → review → crawl). Approved companies can be promoted into
+# the curated startups.yml, or crawled straight from here:
+#     node scan.mjs --config discovered-companies.yml --posted 7d
+#
+# This file is separate from startups.yml on purpose: auto-discovery never
+# touches your hand-curated watchlist.
+#
+# Entry shape (same as startups.yml + discovery metadata):
+#   name, careers_url, ats, city, enabled, tier,
+#   discovered: YYYY-MM-DD, source: "<query/aggregator>", status: pending-review|approved|rejected
+#   sr_slug: <slug>   # only for smartrecruiters entries added by name
+
+title_filter:
+  positive:
+    - "AI Engineer"
+    - "ML Engineer"
+    - "AI/ML"
+    - "LLM"
+    - "Generative AI"
+    - "GenAI"
+    - "RAG"
+    - "AI Agent"
+    - "Agentic"
+    - "Voice AI"
+    - "NLP"
+    - "Machine Learning"
+    - "Deep Learning"
+    - "Applied AI"
+    - "Data Scientist"
+    - "AI Developer"
+    - "Fresher"
+    - "New Grad"
+    - "Graduate"
+    - "Junior"
+    - "AI Intern"
+  negative:
+    - "3+ years"
+    - "4+ years"
+    - "5+ years"
+    - "Senior"
+    - "Staff"
+    - "Principal"
+    - "Lead"
+    - "Director"
+    - "VP"
+    - "Frontend"
+    - "Sales"
+
+location_filter:
+  allow: ["Bengaluru", "Bangalore", "Hyderabad", "Chennai", "India", "Remote", "Pune"]
+  block: ["United States", "USA", "Europe", "London"]
+
+default_posted_window: "7d"
+
+# Companies land here via `/career-ops discover`. Empty until first run.
+tracked_companies: []
