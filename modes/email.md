@@ -11,7 +11,7 @@ to `makilesh24225@gmail.com`. This is the **PRIMARY and ONLY** email transport.
 - **Fixed content:** body = `templates/cover-letter.md` (application) /
   `templates/followup-message.md` (follow-up) / `templates/referral-message.md`
   (referral), each **verbatim** with only the allowed substitutions.
-- **Always attach `Resume_Makilesh.pdf`.**
+- **Always attach `Makilesh_M_AI_Engineer_Resume.pdf`.**
 - **Dedup:** never send twice for the same company+role. Check `data/applications.md`
   AND `data/email-log.json` before sending.
 - **Daily cap:** default 20/day (`config/profile.yml` → `email.daily_cap`).
@@ -35,7 +35,7 @@ email an application/follow-up/referral.
      follow-ups → `Re: Application — {role} — Makilesh M`;
      referrals → `Referral request — {role} at {company} — Makilesh M`.
    - Body: the matching template, verbatim (substitute role/company/name only).
-   - Attachment: `Resume_Makilesh.pdf`.
+   - Attachment: `Makilesh_M_AI_Engineer_Resume.pdf`.
 5. **Review card + batch approval** (per email): To / Subject / template name /
    attachment. `"approve all" / "approve 1,3"`. Nothing sends without approval.
 6. **Send/draft via Gmail MCP:**
@@ -43,7 +43,7 @@ email an application/follow-up/referral.
      directly and capture the returned message ID.
    - If it only exposes **`create_draft`** (current setup) → create one draft per
      approved email and tell Makilesh: *"N drafts are in your Gmail Drafts —
-     attach `Resume_Makilesh.pdf` if the draft tool couldn't, review, and hit
+     attach `Makilesh_M_AI_Engineer_Resume.pdf` if the draft tool couldn't, review, and hit
      Send."* The draft ID is logged; mark the log entry `"status": "drafted"`
      and flip it to `"sent"` when Makilesh confirms.
 7. **Log** in `data/email-log.json` (append to `sent`):
@@ -59,5 +59,5 @@ email an application/follow-up/referral.
 ## Errors
 
 - Gmail MCP missing/unauthorized/error → STOP, report, do NOT retry via browser.
-- Attachment missing (`Resume_Makilesh.pdf` not found) → STOP, report.
+- Attachment missing (`Makilesh_M_AI_Engineer_Resume.pdf` not found) → STOP, report.
 - Partial batch failure → log what sent, report what didn't, never double-send.

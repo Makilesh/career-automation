@@ -26,4 +26,4 @@ Training that improves credibility for early-career, production-minded AI/ML:
 4. MLOps / deployment packaging (Docker, FastAPI)
 5. Applied deep learning / NLP with a portfolio artifact
 
-Note: the resume is fixed (`Resume_Makilesh.pdf`) — a "DO" verdict is about skills and portfolio, not about editing the resume.
+Note: the resume is fixed (`Makilesh_M_AI_Engineer_Resume.pdf`) — a "DO" verdict is about skills and portfolio, not about editing the resume.

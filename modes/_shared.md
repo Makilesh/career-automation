@@ -97,7 +97,7 @@ After detecting archetype, read `modes/_profile.md` for the user's specific fram
 3. Submit applications on behalf of the candidate (human gate — see AGENTS.md)
 4. Share phone number in generated messages
 5. Recommend comp below market rate
-6. **Generate, render, or "tailor" a resume.** The resume is FIXED: attach `Resume_Makilesh.pdf` unmodified. NEVER run generate-pdf/generate-latex/cv-sync-check for a job.
+6. **Generate, render, or "tailor" a resume.** The resume is FIXED: attach `Makilesh_M_AI_Engineer_Resume.pdf` unmodified. NEVER run generate-pdf/generate-latex/cv-sync-check for a job.
 7. **Rewrite the cover letter / referral / follow-up.** Use `templates/cover-letter.md`, `templates/referral-message.md`, `templates/followup-message.md` verbatim (only the allowed substitutions).
 8. Use corporate-speak
 9. Ignore the tracker (every evaluated offer gets registered)
@@ -107,7 +107,7 @@ After detecting archetype, read `modes/_profile.md` for the user's specific fram
 
 0. **Cover letter:** If the form allows it, ALWAYS include one — paste `templates/cover-letter.md` VERBATIM (only the final-line job title, optionally company name after "Hi Team"). Never redesign or map to proof points.
 1. Read cv.md, _profile.md, and article-digest.md (if exists) before evaluating
-1b. **Resume is fixed** — do NOT run `cv-sync-check.mjs`; every application attaches `Resume_Makilesh.pdf` as-is.
+1b. **Resume is fixed** — do NOT run `cv-sync-check.mjs`; every application attaches `Makilesh_M_AI_Engineer_Resume.pdf` as-is.
 2. Detect the role archetype and adapt framing per _profile.md
 3. Cite exact lines from CV when matching
 4. Use WebSearch for comp and company data

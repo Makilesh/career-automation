@@ -1,7 +1,7 @@
 # Mode: latex — LaTeX/Overleaf CV Export
 
 > ## ⛔ DISABLED for Makilesh (§4 — resume is FIXED)
-> The resume is **`Resume_Makilesh.pdf`**, attached unmodified to every
+> The resume is **`Makilesh_M_AI_Engineer_Resume.pdf`**, attached unmodified to every
 > application. Do NOT run `generate-latex.mjs` or produce a resume for a job.
 > Retained for reference / other forks only.
 

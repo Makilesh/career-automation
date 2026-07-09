@@ -52,7 +52,7 @@ Thank you for your time!
 If a contact's professional email is found:
 1. Confirm with Makilesh.
 2. Compose from `templates/referral-message.md` (verbatim), subject
-   `Referral request — {role} at {company} — Makilesh M`, attach `Resume_Makilesh.pdf`.
+   `Referral request — {role} at {company} — Makilesh M`, attach `Makilesh_M_AI_Engineer_Resume.pdf`.
 3. Check `data/email-log.json` dedup + daily cap, send via Gmail MCP, log
    `{message_id, timestamp, company, role, type: "referral"}`.
 

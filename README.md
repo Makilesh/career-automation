@@ -19,7 +19,7 @@ LLM router, and Gmail-based applications.
 
 | Area | Behavior |
 |------|----------|
-| **Resume** | FIXED — `Resume_Makilesh.pdf` attached to every application, never generated or "tailored" (§4) |
+| **Resume** | FIXED — `Makilesh_M_AI_Engineer_Resume.pdf` attached to every application, never generated or "tailored" (§4) |
 | **Cover letter** | FIXED — `templates/cover-letter.md`, used verbatim (§5) |
 | **Two scan modes** | `scan-boards` (LinkedIn/Naukri/Wellfound/YC… via `portals-boards.yml`) + `scan-startups` (direct career pages via `startups.yml`); `hunt` runs both end-to-end (§3) |
 | **Recency filter** | `--posted 1h\|same-day\|24h\|3d\|7d` (default 24h), board-native where possible (§2) |

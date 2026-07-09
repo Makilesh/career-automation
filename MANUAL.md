@@ -21,7 +21,7 @@ Ollama + Gemini free tier).
 
 ## 2. The five unbreakable rules (already wired in)
 
-1. **Resume is fixed.** `Resume_Makilesh.pdf` (repo root) goes out unmodified,
+1. **Resume is fixed.** `Makilesh_M_AI_Engineer_Resume.pdf` (repo root) goes out unmodified,
    every time. The system will refuse to "generate" or "tailor" a resume.
 2. **Cover letter is fixed.** `templates/cover-letter.md`, verbatim. Only the
    job title in the last line (and optionally the company name) changes.
@@ -283,7 +283,7 @@ that's a VS Code extension or agent you run, be aware it can corrupt configs —
 ## 10. Where everything lives (quick map)
 
 ```
-Resume_Makilesh.pdf      ← the ONLY resume that ever goes out
+Makilesh_M_AI_Engineer_Resume.pdf      ← the ONLY resume that ever goes out
 templates/               ← your 3 fixed texts (cover letter, referral, follow-up)
 config/profile.yml       ← all your settings
 portals-boards.yml       ← board scan config      → /career-ops scan-boards

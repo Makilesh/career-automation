@@ -7,7 +7,7 @@ the qa-bank learning loop safe — never bypass it.
 
 ## Hard rules (Makilesh)
 
-- **Resume = `Resume_Makilesh.pdf`, attached unmodified.** Never generate/tailor one.
+- **Resume = `Makilesh_M_AI_Engineer_Resume.pdf`, attached unmodified.** Never generate/tailor one.
 - **Cover letter = `templates/cover-letter.md` verbatim** (only final-line role,
   optionally company after "Hi Team"). Never rewrite.
 - **Answers come from `qa-bank.mjs`** (§6), not ad-hoc generation.
@@ -23,7 +23,7 @@ the qa-bank learning loop safe — never bypass it.
 2. IDENTIFY → company + role; match against reports/ (must be evaluated ≥ 3.5)
 3. FIELDS   → Detect ALL fields deterministically (selectors) — no LLM
 4. ANSWER   → For each question: qa-bank.mjs → matched / adapted / needs-input
-5. FILL     → Fill fields, attach Resume_Makilesh.pdf, paste cover letter verbatim
+5. FILL     → Fill fields, attach Makilesh_M_AI_Engineer_Resume.pdf, paste cover letter verbatim
 6. REVIEW   → Show one compact review card; batch approval
 7. SUBMIT   → Only approved ones; then tracker → Applied (timestamp + URL)
 ```
@@ -54,7 +54,7 @@ auth, links) resolve directly from `config/profile.yml` / the pre-seeded qa-bank
 
 - Text fields: fill with the resolved answers.
 - Cover-letter field: paste `templates/cover-letter.md` verbatim.
-- Resume upload: `Resume_Makilesh.pdf`.
+- Resume upload: `Makilesh_M_AI_Engineer_Resume.pdf`.
 - Do not click Submit yet.
 
 ## Step 6 — Review card + batch approval
@@ -68,7 +68,7 @@ Answers used:
   • {question} → {matched|adapted|profile}: {short preview}
   ...
 NEW questions asked (stored to qa-bank): {list or "none"}
-Resume:  Resume_Makilesh.pdf   Cover letter: templates/cover-letter.md (verbatim)
+Resume:  Makilesh_M_AI_Engineer_Resume.pdf   Cover letter: templates/cover-letter.md (verbatim)
 ```
 
 Then: **"approve all" / "approve 1,3,5" / "skip N"**. For email-based applications,

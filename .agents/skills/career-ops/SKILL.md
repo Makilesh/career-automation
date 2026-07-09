@@ -6,7 +6,7 @@ description: Makilesh's AI job-application system — scan boards & startup page
 # career-ops — Skill Router (Makilesh's fork)
 
 **FIRST: read `AGENTS.md` in the repo root** — it contains the non-negotiable
-hard rules (fixed resume `Resume_Makilesh.pdf`, verbatim templates, Gmail MCP
+hard rules (fixed resume `Makilesh_M_AI_Engineer_Resume.pdf`, verbatim templates, Gmail MCP
 only, human gate, ₹0 LLM policy, anti-ban rules). Then read `modes/_shared.md`
 followed by `modes/_profile.md` (user overrides win).
 
@@ -41,7 +41,7 @@ followed by `modes/_profile.md` (user overrides win).
 
 ## Always
 
-- Attach `Resume_Makilesh.pdf` unmodified; cover letter = `templates/cover-letter.md` verbatim.
+- Attach `Makilesh_M_AI_Engineer_Resume.pdf` unmodified; cover letter = `templates/cover-letter.md` verbatim.
 - Answers for forms come from `node qa-bank.mjs answer "<q>" --company <c> --role <r>`.
 - STOP before any Submit/Send — show review cards, wait for batch approval.
 - Email only via Gmail MCP; if unavailable, stop and report.

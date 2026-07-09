@@ -1,7 +1,7 @@
 # Mode: pdf — ATS-Optimized PDF Generation
 
 > ## ⛔ DISABLED for Makilesh (§4 — resume is FIXED)
-> The resume is **`Resume_Makilesh.pdf`**, attached to every application
+> The resume is **`Makilesh_M_AI_Engineer_Resume.pdf`**, attached to every application
 > **unmodified**. This mode is bypassed: do NOT generate, render, or "tailor" a
 > resume, and do NOT run `generate-pdf.mjs` for a job.
 >

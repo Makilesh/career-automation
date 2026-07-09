@@ -1,6 +1,6 @@
 # Mode: auto-pipeline — Full Automatic Pipeline
 
-> **Makilesh rules:** NO resume generation — attach `Resume_Makilesh.pdf` unmodified.
+> **Makilesh rules:** NO resume generation — attach `Makilesh_M_AI_Engineer_Resume.pdf` unmodified.
 > Cover letter = `templates/cover-letter.md` verbatim. Apply threshold 3.5/5.
 > Human gate before any submit/send. Email = Gmail MCP only.
 
@@ -31,7 +31,7 @@ Include Block G in the saved report. Add **URL:** {url} and **Legitimacy:** {tie
 
 ## Step 3 — Resume (FIXED — no generation)
 
-Do NOT generate a PDF. The resume is `Resume_Makilesh.pdf`, attached unmodified.
+Do NOT generate a PDF. The resume is `Makilesh_M_AI_Engineer_Resume.pdf`, attached unmodified.
 In the report/tracker, treat PDF as ✅ (the fixed resume is always available).
 Skip `pdf`/`latex` modes and `cv-sync-check.mjs` entirely.
 

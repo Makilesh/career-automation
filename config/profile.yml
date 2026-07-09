@@ -79,17 +79,17 @@ narrative:
       proof: "Business contact extraction workflow for lead discovery and enrichment"
 
 source_links:
-  resume_pdf: "Resume_Makilesh.pdf"
+  resume_pdf: "Makilesh_M_AI_Engineer_Resume.pdf"
   portfolio: "https://makilesh.github.io/"
   linkedin: "https://www.linkedin.com/in/makilesh/"
   github: "https://github.com/Makilesh/"
 
 application_materials:
   resume_strategy: "use_existing_pdf"
-  resume_pdf: "Resume_Makilesh.pdf"
+  resume_pdf: "Makilesh_M_AI_Engineer_Resume.pdf"
   generate_tailored_resume_pdf: false
   generate_tailored_resume_html: false
-  notes: "Always use the existing Resume_Makilesh.pdf for applications. Do not generate new tailored resume PDFs unless explicitly requested in the current conversation."
+  notes: "Always use the existing Makilesh_M_AI_Engineer_Resume.pdf for applications. Do not generate new tailored resume PDFs unless explicitly requested in the current conversation."
 
 compensation:
   target_range: "₹8-12 LPA (India)"
@@ -155,7 +155,7 @@ email:
 apply:
   min_score_threshold: 3.5
   human_gate: true                        # NEVER auto-submit; batch approval
-  resume_pdf: "Resume_Makilesh.pdf"
+  resume_pdf: "Makilesh_M_AI_Engineer_Resume.pdf"
   cover_letter: "templates/cover-letter.md"
   qa_bank: "data/qa-bank.yml"
 

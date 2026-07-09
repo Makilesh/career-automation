@@ -7,7 +7,7 @@
 - The follow-up body is `templates/followup-message.md` used **VERBATIM** (only
   `{{role}}` / `{{company}}` substituted). Never paraphrase, expand, or "tailor" it.
 - Sent via **Gmail MCP only** (§9) with **batch approval**. Attach
-  `Resume_Makilesh.pdf`. Subject: `Re: Application — {role} — Makilesh M`.
+  `Makilesh_M_AI_Engineer_Resume.pdf`. Subject: `Re: Application — {role} — Makilesh M`.
 - Every follow-up is logged in `data/email-log.json` + `data/follow-ups.md` +
   tracker, and **counts toward the daily email cap** (default 20).
 - If Gmail MCP is unavailable → STOP and report. No browser fallback.
@@ -19,7 +19,7 @@
 - `data/email-log.json` — email dedup + cap accounting
 - `templates/followup-message.md` — the fixed body
 - `config/profile.yml` — identity, `email.daily_cap`
-- `Resume_Makilesh.pdf` — always attached
+- `Makilesh_M_AI_Engineer_Resume.pdf` — always attached
 
 ## Step 1 — Run cadence
 
@@ -65,7 +65,7 @@ Show one compact card per queued follow-up:
 To:      {email}
 Subject: Re: Application — {Role} — Makilesh M
 Body:    (templates/followup-message.md, verbatim)
-Attach:  Resume_Makilesh.pdf
+Attach:  Makilesh_M_AI_Engineer_Resume.pdf
 ```
 
 Then: **"approve all" / "approve 1,3" / "skip N"**. Nothing sends without approval.
@@ -73,7 +73,7 @@ Then: **"approve all" / "approve 1,3" / "skip N"**. Nothing sends without approv
 ## Step 5 — Send via Gmail MCP + log
 
 For each approved follow-up:
-1. Send via Gmail MCP (attach `Resume_Makilesh.pdf`).
+1. Send via Gmail MCP (attach `Makilesh_M_AI_Engineer_Resume.pdf`).
 2. Append to `data/email-log.json`:
    `{message_id, timestamp, company, role, type: "followup"}`.
 3. Append a row to `data/follow-ups.md`

@@ -18,7 +18,7 @@ These override any generic behavior below.
 Makilesh M — AI/ML Engineer (fresher, B.E. CSE, Sri Krishna College of Engineering and Technology, graduating May 2026, CGPA 8.0). Bengaluru, India. makilesh24225@gmail.com · +91 9894419452 · [github.com/Makilesh](https://github.com/Makilesh) · [makilesh.github.io](https://makilesh.github.io) · linkedin.com/in/makilesh.
 
 ### Fixed Documents — NEVER regenerate, rewrite, paraphrase, or "tailor"
-1. **Resume:** ALWAYS attach `Resume_Makilesh.pdf` (repo root) **unmodified** to every application. NEVER run `generate-pdf.mjs` / `generate-latex.mjs` / `cv-sync-check.mjs` or the `pdf`/`latex` modes to produce a resume for a job. Those files stay in the repo but are bypassed. `cv.md` exists only as evaluation-reasoning context — never rendered or sent.
+1. **Resume:** ALWAYS attach `Makilesh_M_AI_Engineer_Resume.pdf` (repo root) **unmodified** to every application. NEVER run `generate-pdf.mjs` / `generate-latex.mjs` / `cv-sync-check.mjs` or the `pdf`/`latex` modes to produce a resume for a job. Those files stay in the repo but are bypassed. `cv.md` exists only as evaluation-reasoning context — never rendered or sent.
 2. **Cover letter / intro message:** use `templates/cover-letter.md` **verbatim**. Only permitted edits: the job title in the final line, optionally the company name after "Hi Team". Never expand or reword.
 3. **Referral outreach:** use `templates/referral-message.md` verbatim (only `{{name}}`/`{{company}}`/`{{role}}`).
 4. **Follow-up email:** use `templates/followup-message.md` verbatim (only `{{role}}`/`{{company}}`).
@@ -221,7 +221,7 @@ Default modes are in `modes/` (English). Additional language-specific modes are 
 
 | If the user... | Mode |
 |----------------|------|
-| Pastes JD or URL | auto-pipeline (evaluate + report + tracker; NO resume gen — attach `Resume_Makilesh.pdf`) |
+| Pastes JD or URL | auto-pipeline (evaluate + report + tracker; NO resume gen — attach `Makilesh_M_AI_Engineer_Resume.pdf`) |
 | Asks to evaluate offer | `oferta` |
 | Asks to compare offers | `ofertas` |
 | Wants to find ANY startup hiring in a location (not by name) | `discover` (config `discovered-companies.yml`; providers greenhouse/ashby/lever/smartrecruiters/workday) |
@@ -231,7 +231,7 @@ Default modes are in `modes/` (English). Additional language-specific modes are 
 | Wants referral outreach prepared | `referral` (repurposes `contacto`; fixed template) |
 | Asks for company research | `deep` |
 | Preps for interview at specific company | `interview-prep` |
-| Wants to generate CV/PDF | ⛔ DISABLED — resume is fixed (`Resume_Makilesh.pdf`); explain, don't generate |
+| Wants to generate CV/PDF | ⛔ DISABLED — resume is fixed (`Makilesh_M_AI_Engineer_Resume.pdf`); explain, don't generate |
 | Evaluates a course/cert | `training` |
 | Evaluates portfolio project | `project` |
 | Asks about application status | `tracker` |
@@ -325,7 +325,7 @@ Allocation: local Qwen for discardable → flash-lite triage → 3.5-flash (over
 
 Gmail MCP connected to `makilesh24225@gmail.com` is the PRIMARY and ONLY email transport. When a listing/startup has an HR/hiring email:
 1. Body = `templates/cover-letter.md` verbatim. Subject = `Application — {role} — Makilesh M (AI/ML Fresher)`.
-2. Attach `Resume_Makilesh.pdf`.
+2. Attach `Makilesh_M_AI_Engineer_Resume.pdf`.
 3. Dedup: check tracker + `data/email-log.json` — NEVER send twice for the same company+role.
 4. Daily cap (default 20, configurable in `config/profile.yml` → `email.daily_cap`); follow-ups count toward it.
 5. Send via Gmail MCP → log `{message_id, timestamp, company, role, type}` in `data/email-log.json` + tracker.

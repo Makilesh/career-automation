@@ -30,10 +30,10 @@ makilesh.github.io with GitHub links to all projects.
 
 ## Candidate-Specific Rules
 
-- ALWAYS use `Resume_Makilesh.pdf` as the resume/CV upload for applications
+- ALWAYS use `Makilesh_M_AI_Engineer_Resume.pdf` as the resume/CV upload for applications
 - NEVER generate a new tailored resume PDF or HTML unless the user explicitly asks for a newly generated resume in the current conversation
-- When reports or tracker rows need a PDF value, treat `Resume_Makilesh.pdf` as the PDF source and mark PDF as available
-- Draft role-specific answers and cover notes are allowed, but keep the resume file fixed as `Resume_Makilesh.pdf`
+- When reports or tracker rows need a PDF value, treat `Makilesh_M_AI_Engineer_Resume.pdf` as the PDF source and mark PDF as available
+- Draft role-specific answers and cover notes are allowed, but keep the resume file fixed as `Makilesh_M_AI_Engineer_Resume.pdf`
 - ALWAYS mention the portfolio URL (makilesh.github.io) in application answers and summaries
 - ALWAYS include GitHub links to the most relevant project for the role
 - Graduating May 2026 - frame as "available immediately"
