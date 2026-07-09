@@ -19,3 +19,5 @@ data/qa-embeddings.json
 output/
 batch/tracker-additions/
 batch/*.txt
+
+.playwright-mcp
