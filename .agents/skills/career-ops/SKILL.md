@@ -17,10 +17,11 @@ followed by `modes/_profile.md` (user overrides win).
 | (no args) — show help | List the commands below |
 | JD text or URL pasted | `modes/auto-pipeline.md` |
 | `hunt` | `modes/hunt.md` |
+| `discover [location] [roles]` | `modes/discover.md` (find ANY startup hiring, config `discovered-companies.yml`) |
 | `scan-boards` | `modes/scan-boards.md` (config `portals-boards.yml`) |
 | `scan-startups` | `modes/scan-startups.md` (config `startups.yml`) |
 | `scan` (legacy) | `modes/scan.md` |
-| `add-startup <name>` | `modes/scan-startups.md` → "add-startup command" |
+| `add-startup <name>` | `modes/scan-startups.md` → run `node resolve-company.mjs "<name>"` to verify, then append |
 | `evaluate` / offer eval | `modes/oferta.md` |
 | `compare` | `modes/ofertas.md` |
 | `apply` | `modes/apply.md` |

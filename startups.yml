@@ -73,7 +73,8 @@ tracked_companies:
   - { name: "Postman",        careers_url: "https://www.postman.com/company/careers/",    ats: custom,     city: "Bengaluru", tier: 2, enabled: true }
   - { name: "Razorpay",       careers_url: "https://razorpay.com/careers/",               ats: custom,     city: "Bengaluru", tier: 2, enabled: true }
   - { name: "Chargebee",      careers_url: "https://www.chargebee.com/careers/",          ats: custom,     city: "Chennai",   tier: 2, enabled: true }
-  - { name: "Freshworks",     careers_url: "https://www.freshworks.com/company/careers/", ats: custom,     city: "Chennai",   tier: 2, enabled: true }
+  - { name: "Freshworks",     careers_url: "https://jobs.smartrecruiters.com/freshworks", ats: smartrecruiters, city: "Chennai", tier: 2, enabled: true }
+  - { name: "Juspay",         careers_url: "https://jobs.smartrecruiters.com/juspay",     ats: smartrecruiters, provider: smartrecruiters, sr_slug: juspay, city: "Bengaluru", tier: 2, enabled: true }
   - { name: "Zoho",           careers_url: "https://careers.zohocorp.com/jobs/Careers",   ats: custom,     city: "Chennai",   tier: 3, enabled: true }
 
   # ── Global remote-friendly AI startups (Tier 2-3) ────────────────────

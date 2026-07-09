@@ -8,11 +8,12 @@ company's portal. Feeds the same tracker + dedup as every other mode.
 
 ## Two paths per company
 
-1. **Zero-token (greenhouse / ashby / lever):** run
+1. **Zero-token (greenhouse / ashby / lever / smartrecruiters / workday):** run
    `node scan.mjs --config startups.yml --posted {window}` — hits the public ATS
-   JSON APIs directly. No LLM, no browser. This covers the ATS-backed entries.
-2. **Playwright (workday / workable / notion / custom):** scan.mjs has no
-   zero-token provider for these, so navigate each `careers_url` with Playwright
+   JSON APIs directly. No LLM, no browser. This covers the ATS-backed entries
+   (SmartRecruiters covers Juspay/Freshworks; Workday covers Fractal, etc.).
+2. **Playwright (keka / workable / notion / custom / self-hosted):** scan.mjs has
+   no zero-token provider for these, so navigate each `careers_url` with Playwright
    (`browser_navigate` + `browser_snapshot`), respecting the headed/headless
    toggle (§8 — default headed so Makilesh can watch). Detect the ATS from the DOM,
    read all listings, extract `{title, url, company, posted}`.
@@ -31,13 +32,22 @@ company's portal. Feeds the same tracker + dedup as every other mode.
 ## add-startup command
 
 `/career-ops add-startup <name>` (or "add <company> to my startups"):
-1. Find the company's careers page (WebSearch + try known ATS patterns:
-   `jobs.ashbyhq.com/{slug}`, `job-boards.greenhouse.io/{slug}`, `jobs.lever.co/{slug}`,
-   `{co}.myworkdayjobs.com`, `apply.workable.com/{slug}`).
-2. **VERIFY the URL resolves** (fetch 200, or Playwright loads a real jobs list).
+1. **Resolve + verify zero-token first:**
+   ```bash
+   node resolve-company.mjs "<name>"        # tries greenhouse/ashby/lever/smartrecruiters
+   ```
+   If `resolved: true` → use the returned `ats` + `careers_url` (already verified).
+2. If not resolved by name, find the careers page via WebSearch, then verify the URL:
+   ```bash
+   node resolve-company.mjs "<careers URL>"
+   ```
+   Known patterns: `jobs.ashbyhq.com/{slug}`, `job-boards.greenhouse.io/{slug}`,
+   `jobs.lever.co/{slug}`, `jobs.smartrecruiters.com/{slug}`,
+   `{co}.{shard}.myworkdayjobs.com/{site}`, `{co}.kekahire.com`, custom.
    403 with a real page = keep (bot-blocked, Playwright can read it). Dead = drop.
-3. Detect `ats`, note `city`, look for a careers/HR `hr_email` if visible.
+3. Note `city`, look for a careers/HR `hr_email` if visible.
 4. Append the entry to `startups.yml`. Never save an unverified/dead link.
+   (For discovery of companies you did NOT name, use `/career-ops discover`.)
 
 ## LLM policy (§7.1)
 

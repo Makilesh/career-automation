@@ -17,6 +17,8 @@
     "scan": "node scan.mjs",
     "scan:boards": "node scan.mjs --config portals-boards.yml",
     "scan:startups": "node scan.mjs --config startups.yml",
+    "scan:discovered": "node scan.mjs --config discovered-companies.yml",
+    "resolve": "node resolve-company.mjs",
     "gemini:eval": "node gemini-eval.mjs",
     "llm": "node llm-router.mjs",
     "qa": "node qa-bank.mjs",

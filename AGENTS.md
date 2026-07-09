@@ -224,6 +224,7 @@ Default modes are in `modes/` (English). Additional language-specific modes are 
 | Pastes JD or URL | auto-pipeline (evaluate + report + tracker; NO resume gen — attach `Resume_Makilesh.pdf`) |
 | Asks to evaluate offer | `oferta` |
 | Asks to compare offers | `ofertas` |
+| Wants to find ANY startup hiring in a location (not by name) | `discover` (config `discovered-companies.yml`; providers greenhouse/ashby/lever/smartrecruiters/workday) |
 | Scans job boards & aggregators | `scan-boards` (config `portals-boards.yml`) |
 | Scans direct startup career pages | `scan-startups` (config `startups.yml`) |
 | Wants a full run (boards + startups → dedup → evaluate → apply queue) | `hunt` |

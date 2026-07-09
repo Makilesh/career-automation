@@ -68,8 +68,9 @@ That's the whole job search. Everything below is detail.
 | Command | What it does | When to use |
 |---|---|---|
 | `/career-ops hunt` | Full run: both scans → evaluate → apply queue → review cards | Daily driver |
+| `/career-ops discover "Bangalore" "AI intern, AI engineer"` | Finds companies you did NOT name that are hiring in a location, verifies each, adds to a review list, then crawls their own sites | When you want to cast a wide net beyond your watchlist |
 | `/career-ops scan-boards` | Scan LinkedIn/Naukri/Instahyre/Cutshort/Wellfound/Internshala/Hirist/foundit/YC + ATS searches | When you only want discovery, no applying |
-| `/career-ops scan-startups` | Scan the 26-company watchlist's own career pages | Weekly — startup pages change slowly |
+| `/career-ops scan-startups` | Scan your watchlist's own career pages | Weekly — startup pages change slowly |
 | `/career-ops add-startup Groq` | Finds + verifies Groq's careers page, adds it to the watchlist | Whenever you hear of a startup you like |
 | *paste a job URL or JD* | Evaluates it, writes a report, updates tracker | Someone sends you a job link |
 | `/career-ops apply` | Fill the form open in the browser using your qa-bank | You're on an application page right now |
@@ -113,6 +114,22 @@ npm run doctor                                              # health check
 - Anything older than the recency window is never shown to you.
 - Everything seen is remembered in `data/scan-history.tsv` so you never see a
   duplicate.
+
+### 5.1b Discovery — finding companies you didn't name (`discover`)
+The watchlist (`startups.yml`) only knows companies you've added. **`discover`**
+casts wider: it runs ATS-scoped searches (`site:jobs.smartrecruiters.com`,
+`site:job-boards.greenhouse.io`, Ashby, Lever, Workday) plus aggregators
+(Wellfound/YC/Instahyre) for your roles + location + recency, finds companies
+you don't track, **verifies each one's career board resolves** (via
+`resolve-company.mjs`, zero-token), and drops them into
+`discovered-companies.yml` marked `pending-review`. You approve which to crawl —
+nothing auto-applies — then it goes into their own sites and pulls the roles.
+Companies that keep posting good roles, promote into `startups.yml`.
+
+**ATS coverage** (which company sites can be crawled free, no browser):
+Greenhouse, Ashby, Lever, **SmartRecruiters** (Juspay, Freshworks…), **Workday**
+(Fractal…). KekaHire and fully custom/self-hosted sites (Eightfold, Opkey) have no
+open API, so they're crawled best-effort with the browser or need a manual URL.
 
 ### 5.2 Evaluation
 Each new offer gets an A–G report in `reports/` (skills match, archetype fit,
