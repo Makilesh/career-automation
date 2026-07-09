@@ -1,3 +1,19 @@
+# ═══════════════════════════════════════════════════════════════════════
+# qa-bank.yml — Makilesh's application answer bank. EDIT THIS FREELY.
+#
+# HOW IT WORKS (zero-token by design):
+#   • When a form asks a question, the system finds the closest entry here.
+#   • A direct/near match  → your stored answer is used AS-IS. No LLM, no tokens.
+#   • {{company}} / {{role}} are filled in automatically per application.
+#   • Only a genuinely NEW question triggers adaptation — and that now runs on
+#     the FREE local model (Qwen), so it still costs zero cloud tokens.
+#   • Truly new personal questions (odd salary/visa/etc.) pause and ask you.
+#
+# TO MAKE ANSWERS SOUND LIKE YOU: just edit the "a:" text below. Keep "q:" close
+# to how forms phrase the question (add extra q entries for other phrasings).
+# Note: when the system auto-learns a new answer it rewrites this file and these
+# comments are dropped — the guide also lives in MANUAL.md.
+# ═══════════════════════════════════════════════════════════════════════
 version: 1
 entries:
   - q: What is your full name?
@@ -153,3 +169,173 @@ entries:
       - availability
       - commitments
     added: '2026-07-04'
+  - q: Tell me about yourself.
+    a: >-
+      I'm Makilesh, an AI/ML engineer (B.E. CSE, 2026). I build production-grade LLM, RAG, agentic,
+      and Voice AI systems. During my internship at Shamla Tech I shipped an AI voice calling agent,
+      a real-time meeting assistant with 10-speaker diarization, and a multi-source lead pipeline
+      that cut LLM calls ~94%. Alongside that I've built 40+ AI/ML projects — an 8-agent LangGraph
+      RAG and a 200-400ms full-duplex voice agent among them. Oracle-certified in GenAI and Data
+      Science.
+    tags:
+      - summary
+      - intro
+      - subjective
+    added: '2026-07-09'
+  - q: Why do you want to work at {{company}}?
+    a: >-
+      I want to work at {{company}} because it's building real AI products where I can ship
+      end-to-end from day one. My portfolio — production RAG, multi-agent systems, and Voice AI —
+      maps directly to the kind of applied AI work {{company}} does, and I learn fastest in
+      fast-moving teams.
+    tags:
+      - motivation
+      - company
+      - subjective
+    added: '2026-07-09'
+  - q: Why are you interested in this role?
+    a: >-
+      This {{role}} role is exactly where my hands-on experience sits — building and shipping
+      LLM/RAG/agent systems with measurable outcomes. I've done this across an internship and 40+
+      projects, and I want to keep doing it on a real product with a strong team.
+    tags:
+      - motivation
+      - role
+      - subjective
+    added: '2026-07-09'
+  - q: Why do you want to work in AI/ML?
+    a: >-
+      I like turning AI from demos into systems that actually work — measuring latency, debugging
+      failures, and shipping. I've spent the last ~3 years building RAG pipelines, agents, and Voice
+      AI, and it's the work I want to do full-time.
+    tags:
+      - motivation
+      - subjective
+    added: '2026-07-09'
+  - q: What are your greatest strengths?
+    a: >-
+      Shipping working AI systems end-to-end and debugging them under real constraints. I'm strong
+      with LLMs/RAG, multi-agent orchestration (LangGraph, CrewAI), vector DBs, and real-time Voice
+      AI, and I move fast — 40+ projects and a production internship as a fresher.
+    tags:
+      - strengths
+      - subjective
+    added: '2026-07-09'
+  - q: What is your biggest weakness?
+    a: >-
+      I sometimes go deep optimizing a system (like shaving voice-agent latency) when a simpler
+      version would ship sooner. I've been fixing this by timeboxing and shipping a working baseline
+      first, then improving.
+    tags:
+      - weakness
+      - subjective
+    added: '2026-07-09'
+  - q: What makes you a good fit for this role?
+    a: >-
+      I already ship the exact systems this {{role}} needs — production RAG (8-agent LangGraph,
+      hybrid retrieval, reranking), multi-agent automation, and real-time Voice AI. I bring
+      internship experience plus 40+ projects, and I can contribute from week one.
+    tags:
+      - fit
+      - subjective
+    added: '2026-07-09'
+  - q: Tell me about a project you are proud of.
+    a: >-
+      My M&A Diligence RAG Engine: an 8-agent LangGraph pipeline with hybrid dense+sparse retrieval
+      on Qdrant, RRF fusion, cross-encoder reranking, and 76 automated tests. It taught me to build
+      retrieval that's accurate AND testable, not just a demo. (github.com/Makilesh)
+    tags:
+      - project
+      - portfolio
+      - subjective
+    added: '2026-07-09'
+  - q: What is your experience with LLMs and RAG?
+    a: >-
+      Strong and hands-on. I've built multiple RAG systems — an 8-agent LangGraph engine with hybrid
+      retrieval, RRF fusion, and cross-encoder reranking, and an AI Legal Engine over 673+ documents
+      with sub-second retrieval. I work with prompt design, evals, embeddings, and multi-provider
+      LLM fallback.
+    tags:
+      - llm
+      - rag
+      - experience
+    added: '2026-07-09'
+  - q: What is your experience with AI agents or multi-agent systems?
+    a: >-
+      I build agentic systems regularly — an 8-agent LangGraph RAG with self-corrective retrieval, a
+      4-agent marketing system (Analyst→Strategy→Execution→Critic) with a critique loop, and an
+      exit-interview agent with a 7-state machine. I use LangGraph, CrewAI, and AutoGen.
+    tags:
+      - agents
+      - experience
+    added: '2026-07-09'
+  - q: How many years of experience do you have?
+    a: >-
+      I'm a fresher (B.E. CSE, 2026) with ~6 months of internship experience at Shamla Tech
+      Solutions plus ~3 years building 40+ AI/ML projects. My practical AI experience is well beyond
+      a typical fresher.
+    tags:
+      - experience
+      - years
+    added: '2026-07-09'
+  - q: Which programming languages are you proficient in?
+    a: >-
+      Python (primary, for all my AI/ML work). Also C++, C, Java, and JavaScript, plus SQL and web
+      basics (HTML/CSS, React).
+    tags:
+      - skills
+      - languages
+    added: '2026-07-09'
+  - q: Are you comfortable working with Python?
+    a: >-
+      Yes — Python is my primary language for everything: LLM/RAG apps, agents, Voice AI, FastAPI
+      backends, async pipelines, and data work (Pandas, NumPy, PyTorch).
+    tags:
+      - skills
+      - python
+    added: '2026-07-09'
+  - q: Describe your internship experience.
+    a: >-
+      AI Developer Intern at Shamla Tech Solutions (Sep 2025–Mar 2026). I built an AI voice calling
+      agent (Twilio + Pinecone), a real-time cross-platform meeting assistant with 10-speaker
+      diarization, and a multi-source lead pipeline with staged AI qualification and LLM fallback
+      that reduced LLM calls ~94%.
+    tags:
+      - internship
+      - experience
+    added: '2026-07-09'
+  - q: What is your biggest achievement?
+    a: >-
+      Shipping production-grade AI as a student: at Shamla Tech I built a lead pipeline that cut LLM
+      calls ~94% and a 10-speaker-diarization meeting assistant, and independently a 200-400ms
+      full-duplex voice agent. Also a 2x hackathon finalist (IMPACT X 2024, THIRAN 2025).
+    tags:
+      - achievement
+      - subjective
+    added: '2026-07-09'
+  - q: How did you hear about this position?
+    a: >-
+      Through my own AI-assisted job search — I track AI/ML roles across job boards and startup
+      career pages and evaluated this {{role}} at {{company}} as a strong match.
+    tags:
+      - source
+      - subjective
+    added: '2026-07-09'
+  - q: Do you have experience deploying models or with MLOps?
+    a: >-
+      Yes — I package and deploy with Docker and Docker Compose, serve with FastAPI, and run
+      local+cloud LLMs (Ollama + Gemini/OpenAI) with fallback. My RAG and voice projects are
+      deployed as running services, not notebooks.
+    tags:
+      - mlops
+      - deployment
+      - experience
+    added: '2026-07-09'
+  - q: Are you available for a full-time role?
+    a: >-
+      Yes — I'm available full-time and can join immediately (B.E. CSE completed, May 2026). Open to
+      onsite/hybrid in Bangalore, Hyderabad, or Chennai.
+    tags:
+      - availability
+      - fulltime
+    added: '2026-07-09'

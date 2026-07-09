@@ -147,8 +147,17 @@ Every form question goes through `qa-bank.mjs`:
 - **Brand-new personal question** (motivation, salary edge cases, visa) → it
   **stops and asks you in chat**, saves your answer, continues. It never invents
   personal answers.
-The bank gets smarter with every application. You can edit the YAML by hand
-anytime — it's just questions and answers.
+The bank gets smarter with every application. **You can — and should — edit
+`data/qa-bank.yml` by hand** so answers sound like you: just change the `a:` text.
+It ships with ~40 common questions pre-answered (tell me about yourself, strengths,
+why this company, Python experience, RAG/agent experience, years of experience,
+CTC, notice period, etc.). A direct/near match uses your stored answer **as-is with
+zero tokens**; `{{company}}`/`{{role}}` fill in automatically. Only a brand-new
+question triggers adaptation, which now runs on the **free local Qwen model** — so
+the whole bank is effectively zero cloud-token. Add more `q:` phrasings for the
+same answer to widen what matches directly. (When the system auto-learns an answer
+it rewrites the file and strips comments — the guide is duplicated here for that
+reason.)
 
 ### 5.4 LLM router (₹0 policy) — `llm-router.mjs`
 Deterministic work (parsing, filtering, dedup) = plain code, no LLM.

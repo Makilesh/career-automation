@@ -186,7 +186,11 @@ export async function answerQuestion(question, { company = '', role = '' } = {})
         `Adapt the closest stored answers into a concise, honest answer to the NEW question. ` +
         `Do not invent facts not present in the stored answers. Keep it 1-3 sentences.\n\n` +
         `NEW QUESTION: ${question}\n\nCLOSEST STORED ANSWERS:\n${context}\n\nADAPTED ANSWER:`;
-      const out = await route({ tier: 'eval', prompt, label: 'qa-bank-adapt', temperature: 0.3 });
+      // tier 'local' = free local Qwen, ZERO cloud tokens. Direct matches never
+      // hit an LLM at all; only genuinely-new near-matches reach this, and even
+      // then it stays on the local model. Override to 'eval' only if you want
+      // Gemini-quality adaptation for a specific run.
+      const out = await route({ tier: 'local', prompt, label: 'qa-bank-adapt', temperature: 0.3 });
       const adapted = fill(out.text.trim(), { company, role });
       // Store the new Q+A for reuse (dedup-checked).
       appendEntry(bank, { q: question, a: out.text.trim(), tags: ['adapted'] });

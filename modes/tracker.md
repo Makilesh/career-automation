@@ -19,6 +19,6 @@ Also show statistics:
 - Total applications
 - By status
 - Average score
-- % with resume attached (always `Resume_Makilesh.pdf`)
+- % with resume attached (always `Makilesh_M_AI_Engineer_Resume.pdf`)
 - % with report generated
 - Emails sent / follow-ups sent (from `data/email-log.json`)
