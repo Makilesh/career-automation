@@ -73,7 +73,7 @@ tracked_companies:
     enabled: true
 
   - name: Observe.AI
-    careers_url: https://jobs.lever.co/observeai
+    careers_url: https://job-boards.greenhouse.io/observeai
     notes: "Bangalore/SF. Voice AI for contact centers. RAG + voice = direct match."
     tier: 1
     enabled: true
@@ -111,7 +111,7 @@ tracked_companies:
     enabled: true
 
   - name: AssemblyAI
-    careers_url: https://jobs.ashbyhq.com/assemblyai
+    careers_url: https://job-boards.greenhouse.io/assemblyai
     notes: "Remote. Speech AI APIs. STT/NLP - voice AI match."
     tier: 1
     enabled: true
@@ -123,7 +123,8 @@ tracked_companies:
     enabled: true
 
   - name: Freshworks
-    careers_url: https://jobs.lever.co/freshworks
+    careers_url: https://jobs.smartrecruiters.com/freshworks
+    provider: smartrecruiters
     notes: "Chennai/Bangalore. AI-powered SaaS."
     tier: 2
     enabled: true
@@ -137,8 +138,9 @@ tracked_companies:
     enabled: true
 
   - name: Sprinklr
-    careers_url: https://job-boards.greenhouse.io/sprinklr
-    api: https://boards-api.greenhouse.io/v1/boards/sprinklr/jobs
+    careers_url: https://www.sprinklr.com/careers/
+    scan_method: websearch
+    scan_query: 'site:sprinklr.com/careers "AI" OR "ML" OR "machine learning" engineer'
     notes: "Gurgaon/Remote. AI-powered CX platform."
     tier: 2
     enabled: true
