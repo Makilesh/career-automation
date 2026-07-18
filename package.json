@@ -22,7 +22,8 @@
     "gemini:eval": "node gemini-eval.mjs",
     "llm": "node llm-router.mjs",
     "qa": "node qa-bank.mjs",
-    "followup:cadence": "node followup-cadence.mjs"
+    "followup:cadence": "node followup-cadence.mjs",
+    "dashboard": "node dashboard.mjs"
   },
   "keywords": [
     "ai",

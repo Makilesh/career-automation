@@ -71,7 +71,7 @@ function checkCv() {
     label: 'cv.md not found',
     fix: [
       'Create cv.md in the project root with your CV in markdown',
-      'See examples/ for reference CVs',
+      'cv.md is the evaluation-reasoning source',
     ],
   };
 }
@@ -188,7 +188,6 @@ async function main() {
   } else {
     console.log('Result: All checks passed. You\'re ready to go! Run `claude` to start.');
     console.log('');
-    console.log('Join the community: https://discord.gg/8pRpHETxa4');
     process.exit(0);
   }
 }
