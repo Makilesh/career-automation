@@ -140,12 +140,16 @@ try {
 // ── 4. DASHBOARD BUILD ──────────────────────────────────────────
 
 if (!QUICK) {
-  console.log('\n4. Dashboard build');
-  const goBuild = run('cd dashboard && go build -o /tmp/career-dashboard-test . 2>&1');
-  if (goBuild !== null) {
-    pass('Dashboard compiles');
+  console.log('\n4. Dashboard');
+  // Go dashboard was removed from this fork; the web dashboard is dashboard.mjs.
+  if (fileExists('dashboard/main.go')) {
+    const goBuild = run('cd dashboard && go build -o /tmp/career-dashboard-test . 2>&1');
+    if (goBuild !== null) { pass('Dashboard compiles'); } else { fail('Dashboard build failed'); }
+  } else if (fileExists('dashboard.mjs')) {
+    const nodeCheck = run('node --check dashboard.mjs 2>&1');
+    if (nodeCheck !== null) { pass('dashboard.mjs syntax OK'); } else { fail('dashboard.mjs has syntax errors'); }
   } else {
-    fail('Dashboard build failed');
+    console.log('  (no dashboard present — skipped)');
   }
 } else {
   console.log('\n4. Dashboard build (skipped --quick)');

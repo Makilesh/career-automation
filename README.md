@@ -55,6 +55,7 @@ interactive Claude Code session) to enable email applications.
 | `/career-ops referral <company>` | Prepare fixed referral messages (you send on LinkedIn) |
 | `/career-ops followup` | Queue the 6-day, one-time follow-up via Gmail MCP |
 | `/career-ops tracker` | Application status + stats |
+| `npm run dashboard` | **Web control panel** at localhost:4646 — see applications/pipeline/details, edit Q&A answers, run scans |
 
 CLI helpers: `node scan.mjs --config startups.yml --posted 7d`,
 `node qa-bank.mjs answer "..."`, `node llm-router.mjs usage`,
